@@ -15,12 +15,18 @@ namespace PP_Notensystem.cls
     /// <summary>
     /// Klasse die einen Datensatz der Tabelle Person dagibt
     /// </summary>
-    class cPerson
+    class Person
     {
 
         #region Konstruktoren
 
-        public cPerson(int newPersID, string newFirstName, string newLastName)
+        public Person(string newFirstName, string newLastName)
+        {
+            _LastName = newLastName;
+            _FirstName = newFirstName;
+        }
+
+        public Person(string newFirstName, string newLastName,int newPersID )
         {
             _PersID = newPersID;
             _LastName = newLastName;
