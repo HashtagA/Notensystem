@@ -47,5 +47,11 @@ namespace PP_Notensystem
         {
             DataBase.disconnect();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addClassForm acf = new addClassForm();
+            acf.Show();
+        }
     }
 }
