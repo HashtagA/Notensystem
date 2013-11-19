@@ -40,5 +40,12 @@ namespace PP_Notensystem
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addClassForm acf = new addClassForm();
+            acf.Show();
+
+        }
     }
 }
