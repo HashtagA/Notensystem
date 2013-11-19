@@ -88,12 +88,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
-            this.label1.Location = new System.Drawing.Point(3, 2);
+            this.label1.Location = new System.Drawing.Point(122, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(419, 39);
+            this.label1.Size = new System.Drawing.Size(181, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Bitte geben Sie den Namen der Klasse, der wie vielte Turnus und dessen Start und " +
-    "End Datzume ein\r\n\r\n";
+            this.label1.Text = "Bitte füllen Sie die Informationen aus.\r\n\r\n";
             // 
             // label2
             // 
