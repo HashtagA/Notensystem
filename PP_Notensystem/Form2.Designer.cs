@@ -43,9 +43,9 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.turnusNumberRodioButtonGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -146,6 +146,7 @@
             this.addButton.TabIndex = 9;
             this.addButton.Text = "&Hinzufügen";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // turnusStartDatePicker
             // 
@@ -207,6 +208,17 @@
             this.radioButton3.Text = "3";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(32, 13);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(31, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -221,17 +233,6 @@
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(32, 13);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(31, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "1";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // addClassForm
             // 

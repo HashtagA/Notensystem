@@ -11,9 +11,15 @@ namespace PP_Notensystem
 {
     public partial class addClassForm : Form
     {
+
         public addClassForm()
         {
             InitializeComponent();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+
         }
 
      
