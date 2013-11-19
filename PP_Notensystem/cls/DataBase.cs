@@ -41,10 +41,20 @@ namespace PP_Notensystem.cls
                 DBHelper.ExecuteScalarGetInsertedID(dbCon, query);
             }
         }
-        public static IDataReader select(string query){
+        /*public string[][] select(string query){
+            string[][] output;
             using (IDataReader dbReader = DBHelper.ExecuteReader(dbCon, query)){
-                return dbReader;
+                while(dbReader.Read()){
+                    for(int i = 0;i<dbReader.FieldCount;i++){
+                        if(dbReader.GetType()==string){
+                            output[output.Length][i] = dbReader.GetString(0);
+                        }else if(dbReader.GetType()==int){
+                            
+                       }
+                    }
+                }
+                return output;
             }
-        }
+        }*/
     }
 }
