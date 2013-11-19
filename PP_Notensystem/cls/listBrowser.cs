@@ -5,8 +5,10 @@ using System.Text;
 
 namespace PP_Notensystem.cls
 {
-    class listBrowser
+    static class ListBrowser
     {
-
+        public static void loadSelection(){
+            
+        }
     }
 }

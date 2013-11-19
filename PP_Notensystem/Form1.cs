@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PP_Notensystem.cls;
 
 namespace PP_Notensystem
 {
@@ -13,7 +14,8 @@ namespace PP_Notensystem
     {
         public Form1()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            DataBase.connect();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,11 +43,9 @@ namespace PP_Notensystem
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            addClassForm acf = new addClassForm();
-            acf.Show();
-
+            DataBase.disconnect();
         }
     }
 }
