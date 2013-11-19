@@ -13,7 +13,7 @@ namespace PP_Notensystem
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
