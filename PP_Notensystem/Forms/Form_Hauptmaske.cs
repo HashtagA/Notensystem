@@ -58,7 +58,22 @@ namespace PP_Notensystem
             if (acf.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                SchoolClass newClass = acf.CreateSchoolClass(); 
+
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            addSubject aS = new addSubject();
+
+            aS.ShowDialog(); 
+
+            /*if (aS.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+              
+            }*/
+
+
         }
     }
 }
