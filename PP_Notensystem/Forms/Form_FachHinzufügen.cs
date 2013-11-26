@@ -11,6 +11,9 @@ namespace PP_Notensystem
 {
     public partial class addSubject : Form
     {
+
+        String tmpGroupe;
+
         public addSubject()
         {
             InitializeComponent();
@@ -25,6 +28,39 @@ namespace PP_Notensystem
         {
             DialogResult = DialogResult.Cancel;
         }
+
+        public SchoolSubject createSchoolSubject()
+        {
+            SchoolSubject tmpSchoolSubject = new SchoolSubject(txtSubject.Text, tmpGroupe, cBClass.Text);
+
+            return tmpSchoolSubject;
+        }
+
+        private void rBN_CheckedChanged(object sender, EventArgs e)
+        {
+            tmpGroupe = rBN.Text;
+        }
+
+        private void rBV_CheckedChanged(object sender, EventArgs e)
+        {
+            tmpGroupe = rBV.Text;
+        }
+
+        private void rB1_CheckedChanged(object sender, EventArgs e)
+        {
+            tmpGroupe = rB1.Text;
+        }
+
+        private void rB2_CheckedChanged(object sender, EventArgs e)
+        {
+            tmpGroupe = rB2.Text;
+        }
+
+        private void rBAll_CheckedChanged(object sender, EventArgs e)
+        {
+            tmpGroupe = rBAll.Text;
+        }
+
 
     }
 }
