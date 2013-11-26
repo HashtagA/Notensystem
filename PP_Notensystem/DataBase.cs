@@ -12,11 +12,11 @@ namespace PP_Notensystem
     {
         public IDbConnection dbCon;
         public DBHelper.DBTransaction dbTrans;
-        private string id;
-        private int port;
-        private string user;
-        private string pwd;
-        private string db;
+        private string id {get;set;}
+        private int port { get; set; }
+        private string user { get; set; }
+        private string pwd { get; set; }
+        private string db { get; set; }
 
         public DataBase(string idArg, int portArg, string userArg, string pwdArg, string dbArg){
             id = idArg;
@@ -61,11 +61,9 @@ namespace PP_Notensystem
         public IDataReader select(string query)
         {
             try{
-                using (IDataReader dbReader = DBHelper.ExecuteReader(dbCon, query)){
-                    return dbReader;
-                }
+                return DBHelper.ExecuteReader(dbCon, query);
             }catch(Exception e){
-                MessageBox.Show(Form_Hauptmaske.ActiveForm, e.Message);
+                MessageBox.Show(e.Message);
                 return null;
             }
         }
