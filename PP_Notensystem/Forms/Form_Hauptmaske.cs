@@ -12,11 +12,13 @@ namespace PP_Notensystem
 {
     public partial class Form_Hauptmaske : Form
     {
+        public DataBase mainDb;
+
         public Form_Hauptmaske()
         {
             InitializeComponent();
-            DataBase.connect();
-            FilterList.loadSelection(ClassList);
+            mainDb = new DataBase("192.168.28.130", 3306, "Hashtag", "Hashtag", "notensystem");
+            FilterList.loadSelection(ClassList, mainDb);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace PP_Notensystem
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DataBase.disconnect();
+            mainDb.disconnect();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -8,17 +8,26 @@ using BS2DB;
 
 namespace PP_Notensystem
 {
-    static class DataBase
+    public class DataBase
     {
-        public static IDbConnection dbCon;
-        public static DBHelper.DBTransaction dbTrans;
-        private static string id = "192.168.28.130";
-        private static int port = 3306;
-        private static string user = "Hashtag";
-        private static string pwd = "Hashtag";
-        private static string db = "notensystem";
+        public IDbConnection dbCon;
+        public DBHelper.DBTransaction dbTrans;
+        private string id;
+        private int port;
+        private string user;
+        private string pwd;
+        private string db;
 
-        public static void connect()
+        public DataBase(string idArg, int portArg, string userArg, string pwdArg, string dbArg){
+            id = idArg;
+            port = portArg;
+            user = userArg;
+            pwd = pwdArg;
+            db = dbArg;
+            connect();
+        }
+
+        public void connect()
         {
             try
             {
@@ -34,22 +43,22 @@ namespace PP_Notensystem
                 MessageBox.Show(ex.Message);
             }
         }
-        public static void disconnect()
+        public void disconnect()
         {
             dbCon.Close();
         }
-        public static void reconnect() {
+        public void reconnect() {
             dbCon = DBHelper.GetMySQLDBConnection(id, port, user, pwd, db);
             dbCon.Close();
             dbCon.Open();
         }
-        public static void insert(string query)
+        public void insert(string query)
         {
             using (dbTrans){
                 DBHelper.ExecuteScalarGetInsertedID(dbCon, query);
             }
         }
-        public static IDataReader select(string query)
+        public IDataReader select(string query)
         {
             using (IDataReader dbReader = DBHelper.ExecuteReader(dbCon, query)){
                 return dbReader;
