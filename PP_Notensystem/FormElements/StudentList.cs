@@ -18,8 +18,12 @@ namespace PP_Notensystem.FormElements
         public void loadClass(DataGridView list, string name){
             DataTable data = new DataTable();
             IDataReader students = database.select("SELECT * FROM personen");
+            using (students){
+                data.Load(students);
+                list.DataSource = data;
+            }
 
-            list.DataSource = data;
+
 
             
             /*IDataReader classes = db.select("SELECT * FROM klasse");

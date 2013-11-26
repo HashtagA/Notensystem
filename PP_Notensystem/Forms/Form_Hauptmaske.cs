@@ -33,7 +33,8 @@ namespace PP_Notensystem
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
+            StudentList sl = new StudentList(mainDb);
+            sl.loadClass(DataList, ClassList.SelectedNode.Text);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -74,12 +75,6 @@ namespace PP_Notensystem
             }*/
 
 
-        }
-
-        private void ClassList_Click(object sender, EventArgs e)
-        {
-            /*StudentList stundetlist = new StudentList(mainDb);
-            stundetlist.loadClass(DataList, ClassList.SelectedNode.Text);*/
         }
     }
 }
