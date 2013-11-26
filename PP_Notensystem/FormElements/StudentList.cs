@@ -17,30 +17,12 @@ namespace PP_Notensystem.FormElements
 
         public void loadClass(DataGridView list, string name){
             DataTable data = new DataTable();
-            IDataReader students = database.select("SELECT * FROM personen");
+            list.Columns.Clear();
+            IDataReader students = database.select("SELECT s_Vorname AS Vorname, n_Nachname AS Nachname FROM personen");
             using (students){
                 data.Load(students);
                 list.DataSource = data;
             }
-
-
-
-            
-            /*IDataReader classes = db.select("SELECT * FROM klasse");
-            List<TreeNode> nodes = new List<TreeNode>();
-            container.Nodes.Clear();
-
-            using (classes)
-            {
-                while (classes.Read())
-                {
-                    TreeNode added = new TreeNode(classes.GetString(1));
-                    added.Name = classes.GetInt32(0).ToString();
-                    nodes.Add(added);
-                }
-            }
-            classes.Close();
-            container.Nodes.AddRange(nodes.ToArray());*/
         }
         public void loadClass(DataGridView list, string name, string gruppe)
         {
