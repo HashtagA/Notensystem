@@ -60,8 +60,13 @@ namespace PP_Notensystem
         }
         public IDataReader select(string query)
         {
-            using (IDataReader dbReader = DBHelper.ExecuteReader(dbCon, query)){
-                return dbReader;
+            try{
+                using (IDataReader dbReader = DBHelper.ExecuteReader(dbCon, query)){
+                    return dbReader;
+                }
+            }catch(Exception e){
+                MessageBox.Show(Form_Hauptmaske.ActiveForm, e.Message);
+                return null;
             }
         }
     }

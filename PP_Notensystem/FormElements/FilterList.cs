@@ -10,10 +10,10 @@ namespace PP_Notensystem.FormElements
     static class FilterList
     {
         public static void loadSelection(TreeView container, DataBase db){
-            IDataReader classes = db.select("SELECT * FROM klassen");
-            while(classes.Read()){
-                
-            }
+            IDataReader classes = db.select("SELECT * FROM klasse");
+            /*while(classes.Read()){
+                container.Nodes.Add(classes.GetString(1));
+            }*/
         }
     }
 }
