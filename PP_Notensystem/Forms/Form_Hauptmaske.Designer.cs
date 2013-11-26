@@ -84,19 +84,19 @@
             treeNode29});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Hauptmaske));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DataList = new System.Windows.Forms.DataGridView();
+            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.ClassList = new System.Windows.Forms.TreeView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataList)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -104,7 +104,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.DataList, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(262, 29);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -118,18 +118,23 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(604, 439);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // dataGridView1
+            // DataList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.test});
-            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 2);
-            this.dataGridView1.Location = new System.Drawing.Point(3, 212);
-            this.dataGridView1.Name = "dataGridView1";
-            this.tableLayoutPanel1.SetRowSpan(this.dataGridView1, 2);
-            this.dataGridView1.Size = new System.Drawing.Size(598, 224);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.tableLayoutPanel1.SetColumnSpan(this.DataList, 2);
+            this.DataList.Location = new System.Drawing.Point(3, 212);
+            this.DataList.Name = "DataList";
+            this.tableLayoutPanel1.SetRowSpan(this.DataList, 2);
+            this.DataList.Size = new System.Drawing.Size(598, 224);
+            this.DataList.TabIndex = 22;
+            this.DataList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // test
+            // 
+            this.test.HeaderText = "Column1";
+            this.test.Name = "test";
             // 
             // button1
             // 
@@ -169,10 +174,10 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Notensystem";
             // 
-            // treeView1
+            // ClassList
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 29);
-            this.treeView1.Name = "treeView1";
+            this.ClassList.Location = new System.Drawing.Point(12, 29);
+            this.ClassList.Name = "ClassList";
             treeNode1.Name = "Knoten6";
             treeNode1.Text = "GDT";
             treeNode2.Name = "Knoten7";
@@ -233,16 +238,16 @@
             treeNode29.Text = "NWTL";
             treeNode30.Name = "Knoten5";
             treeNode30.Text = "3cITI";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            this.ClassList.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5,
             treeNode10,
             treeNode15,
             treeNode20,
             treeNode25,
             treeNode30});
-            this.treeView1.Size = new System.Drawing.Size(244, 439);
-            this.treeView1.TabIndex = 16;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.ClassList.Size = new System.Drawing.Size(244, 439);
+            this.ClassList.TabIndex = 16;
+            this.ClassList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // label3
             // 
@@ -280,12 +285,7 @@
             this.button4.Text = "CSV-Import";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // test
-            // 
-            this.test.HeaderText = "Column1";
-            this.test.Name = "test";
-            // 
-            // Form1
+            // Form_Hauptmaske
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -294,19 +294,19 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.ClassList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "Form_Hauptmaske";
             this.Text = "Notensystem #A+";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,13 +319,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DataList;
         private System.Windows.Forms.DataGridViewTextBoxColumn test;
+        public System.Windows.Forms.TreeView ClassList;
 
 
     }

@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cls\DataBase.cs" />
-    <Compile Include="cls\ListBrowser.cs" />
+    <Compile Include="DataBase.cs" />
+    <Compile Include="FormElements\FilterList.cs" />
     <Compile Include="Forms\Form_Hauptmaske.cs">
       <SubType>Form</SubType>
     </Compile>

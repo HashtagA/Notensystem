@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using PP_Notensystem.cls;
+using PP_Notensystem.FormElements;
 
 namespace PP_Notensystem
 {
@@ -16,6 +16,7 @@ namespace PP_Notensystem
         {
             InitializeComponent();
             DataBase.connect();
+            FilterList.loadSelection(ClassList);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
