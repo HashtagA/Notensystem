@@ -249,6 +249,7 @@
             this.ClassList.Size = new System.Drawing.Size(244, 439);
             this.ClassList.TabIndex = 16;
             this.ClassList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.ClassList.Click += new System.EventHandler(this.ClassList_Click);
             // 
             // label3
             // 

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DataBase.cs" />
     <Compile Include="FormElements\FilterList.cs" />
+    <Compile Include="FormElements\StudentList.cs" />
     <Compile Include="Forms\Form_FachHinzufügen.cs">
       <SubType>Form</SubType>
     </Compile>

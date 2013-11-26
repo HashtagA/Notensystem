@@ -75,5 +75,11 @@ namespace PP_Notensystem
 
 
         }
+
+        private void ClassList_Click(object sender, EventArgs e)
+        {
+            /*StudentList stundetlist = new StudentList(mainDb);
+            stundetlist.loadClass(DataList, ClassList.SelectedNode.Text);*/
+        }
     }
 }
