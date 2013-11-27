@@ -12,12 +12,9 @@ namespace PP_Notensystem
 {
     public partial class Form_GegenstandGesamtAnsicht : Form
     {
-        public DataBase mainDb;
-
         public Form_GegenstandGesamtAnsicht(string id)
         {
             InitializeComponent();
-
         }
 
         private void dgvGeneralView_CellContentClick(object sender, DataGridViewCellEventArgs e)
