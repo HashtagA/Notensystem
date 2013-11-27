@@ -15,6 +15,14 @@ namespace PP_Notensystem
         public Form_GegenstandGesamtAnsicht(string id)
         {
             InitializeComponent();
+            IDataReader getGroup = DataBase.select("SELECT * FROM Gruppe WHERE id_gruppe =" + id);
+            using (getGroup)
+            {
+                while (getGroup.Read())
+                {
+                    
+                }
+            }
         }
 
         private void dgvGeneralView_CellContentClick(object sender, DataGridViewCellEventArgs e)
