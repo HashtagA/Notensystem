@@ -299,11 +299,12 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(348, 2);
+            this.button5.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.button5.Location = new System.Drawing.Point(340, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(83, 23);
             this.button5.TabIndex = 22;
-            this.button5.Text = "Gesamt";
+            this.button5.Text = "&Gesamt";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
