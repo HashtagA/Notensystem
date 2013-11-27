@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addClassForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.classNameTextBox = new System.Windows.Forms.TextBox();
-            this.turnusStartDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.turnunsEndDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.lbClass = new System.Windows.Forms.Label();
+            this.lbPeriod = new System.Windows.Forms.Label();
+            this.lbStartDate = new System.Windows.Forms.Label();
+            this.lbEnddate = new System.Windows.Forms.Label();
+            this.tbClassName = new System.Windows.Forms.TextBox();
+            this.dpPeriodStart = new System.Windows.Forms.DateTimePicker();
+            this.dpPeriodEnd = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.addButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
             this.turnusNumberRodioButtonGroup = new System.Windows.Forms.GroupBox();
             this.rb4 = new System.Windows.Forms.RadioButton();
             this.rb2 = new System.Windows.Forms.RadioButton();
             this.rb3 = new System.Windows.Forms.RadioButton();
             this.rb1 = new System.Windows.Forms.RadioButton();
+            this.lbToolTip = new System.Windows.Forms.Label();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.tableLayoutPanel1.SuspendLayout();
@@ -64,16 +64,16 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.classNameTextBox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.turnusStartDatePicker, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.turnunsEndDatePicker, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lbClass, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lbPeriod, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lbStartDate, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lbEnddate, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tbClassName, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dpPeriodStart, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.dpPeriodEnd, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.turnusNumberRodioButtonGroup, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbToolTip, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -87,95 +87,83 @@
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // label1
+            // lbClass
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(113, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bitte füllen Sie die Informationen aus:\r\n\r\n";
+            this.lbClass.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbClass.AutoSize = true;
+            this.lbClass.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lbClass.Location = new System.Drawing.Point(3, 51);
+            this.lbClass.Name = "lbClass";
+            this.lbClass.Size = new System.Drawing.Size(87, 16);
+            this.lbClass.TabIndex = 1;
+            this.lbClass.Text = "Klassenname";
             // 
-            // label2
+            // lbPeriod
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label2.Location = new System.Drawing.Point(3, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Klassenname";
+            this.lbPeriod.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbPeriod.AutoSize = true;
+            this.lbPeriod.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lbPeriod.Location = new System.Drawing.Point(3, 96);
+            this.lbPeriod.Name = "lbPeriod";
+            this.lbPeriod.Size = new System.Drawing.Size(68, 16);
+            this.lbPeriod.TabIndex = 2;
+            this.lbPeriod.Text = "Turnus Nr:";
             // 
-            // label3
+            // lbStartDate
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label3.Location = new System.Drawing.Point(3, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Turnus Nr:";
+            this.lbStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbStartDate.AutoSize = true;
+            this.lbStartDate.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lbStartDate.Location = new System.Drawing.Point(3, 149);
+            this.lbStartDate.Name = "lbStartDate";
+            this.lbStartDate.Size = new System.Drawing.Size(160, 16);
+            this.lbStartDate.TabIndex = 3;
+            this.lbStartDate.Text = "Start Datum des Turnuses";
             // 
-            // label4
+            // lbEnddate
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label4.Location = new System.Drawing.Point(3, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Start Datum des Turnuses";
+            this.lbEnddate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbEnddate.AutoSize = true;
+            this.lbEnddate.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lbEnddate.Location = new System.Drawing.Point(3, 195);
+            this.lbEnddate.Name = "lbEnddate";
+            this.lbEnddate.Size = new System.Drawing.Size(155, 16);
+            this.lbEnddate.TabIndex = 4;
+            this.lbEnddate.Text = "End Datum des Turnuses";
             // 
-            // label5
+            // tbClassName
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label5.Location = new System.Drawing.Point(3, 195);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "End Datum des Turnuses";
+            this.tbClassName.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.tbClassName.Location = new System.Drawing.Point(228, 48);
+            this.tbClassName.Name = "tbClassName";
+            this.tbClassName.Size = new System.Drawing.Size(210, 22);
+            this.tbClassName.TabIndex = 5;
             // 
-            // classNameTextBox
+            // dpPeriodStart
             // 
-            this.classNameTextBox.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.classNameTextBox.Location = new System.Drawing.Point(228, 48);
-            this.classNameTextBox.Name = "classNameTextBox";
-            this.classNameTextBox.Size = new System.Drawing.Size(210, 22);
-            this.classNameTextBox.TabIndex = 5;
+            this.dpPeriodStart.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dpPeriodStart.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.dpPeriodStart.Location = new System.Drawing.Point(228, 146);
+            this.dpPeriodStart.Name = "dpPeriodStart";
+            this.dpPeriodStart.Size = new System.Drawing.Size(210, 22);
+            this.dpPeriodStart.TabIndex = 10;
             // 
-            // turnusStartDatePicker
+            // dpPeriodEnd
             // 
-            this.turnusStartDatePicker.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.turnusStartDatePicker.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.turnusStartDatePicker.Location = new System.Drawing.Point(228, 146);
-            this.turnusStartDatePicker.Name = "turnusStartDatePicker";
-            this.turnusStartDatePicker.Size = new System.Drawing.Size(210, 22);
-            this.turnusStartDatePicker.TabIndex = 10;
-            // 
-            // turnunsEndDatePicker
-            // 
-            this.turnunsEndDatePicker.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.turnunsEndDatePicker.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.turnunsEndDatePicker.Location = new System.Drawing.Point(228, 192);
-            this.turnunsEndDatePicker.Name = "turnunsEndDatePicker";
-            this.turnunsEndDatePicker.Size = new System.Drawing.Size(210, 22);
-            this.turnunsEndDatePicker.TabIndex = 11;
+            this.dpPeriodEnd.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dpPeriodEnd.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.dpPeriodEnd.Location = new System.Drawing.Point(228, 192);
+            this.dpPeriodEnd.Name = "dpPeriodEnd";
+            this.dpPeriodEnd.Size = new System.Drawing.Size(210, 22);
+            this.dpPeriodEnd.TabIndex = 11;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.addButton, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.cancelButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btAdd, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btCancel, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(228, 229);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -184,29 +172,29 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(219, 32);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
-            // addButton
+            // btAdd
             // 
-            this.addButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addButton.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.addButton.Location = new System.Drawing.Point(3, 3);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(103, 26);
-            this.addButton.TabIndex = 9;
-            this.addButton.Text = "&Hinzufügen";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btAdd.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btAdd.Location = new System.Drawing.Point(3, 3);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(103, 26);
+            this.btAdd.TabIndex = 9;
+            this.btAdd.Text = "&Hinzufügen";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // cancelButton
+            // btCancel
             // 
-            this.cancelButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cancelButton.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.cancelButton.Location = new System.Drawing.Point(117, 3);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(99, 26);
-            this.cancelButton.TabIndex = 10;
-            this.cancelButton.Text = "&Abbrechen";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.btCancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btCancel.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btCancel.Location = new System.Drawing.Point(117, 3);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(99, 26);
+            this.btCancel.TabIndex = 10;
+            this.btCancel.Text = "&Abbrechen";
+            this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // turnusNumberRodioButtonGroup
             // 
@@ -274,6 +262,18 @@
             this.rb1.UseVisualStyleBackColor = true;
             this.rb1.CheckedChanged += new System.EventHandler(this.rb1_CheckedChanged);
             // 
+            // lbToolTip
+            // 
+            this.lbToolTip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbToolTip.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lbToolTip, 2);
+            this.lbToolTip.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbToolTip.Location = new System.Drawing.Point(113, 6);
+            this.lbToolTip.Name = "lbToolTip";
+            this.lbToolTip.Size = new System.Drawing.Size(223, 32);
+            this.lbToolTip.TabIndex = 0;
+            this.lbToolTip.Text = "Bitte füllen Sie die Informationen aus:\r\n\r\n";
+            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -311,15 +311,15 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox classNameTextBox;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.DateTimePicker turnusStartDatePicker;
-        private System.Windows.Forms.DateTimePicker turnunsEndDatePicker;
+        private System.Windows.Forms.Label lbToolTip;
+        private System.Windows.Forms.Label lbClass;
+        private System.Windows.Forms.Label lbPeriod;
+        private System.Windows.Forms.Label lbStartDate;
+        private System.Windows.Forms.Label lbEnddate;
+        private System.Windows.Forms.TextBox tbClassName;
+        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.DateTimePicker dpPeriodStart;
+        private System.Windows.Forms.DateTimePicker dpPeriodEnd;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.GroupBox turnusNumberRodioButtonGroup;
@@ -328,6 +328,6 @@
         private System.Windows.Forms.RadioButton rb3;
         private System.Windows.Forms.RadioButton rb1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button btCancel;
     }
 }

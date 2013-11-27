@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addSubject));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbToolTip = new System.Windows.Forms.Label();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.cBClass = new System.Windows.Forms.ComboBox();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblGroupe = new System.Windows.Forms.Label();
+            this.btSave = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.lbSubject = new System.Windows.Forms.Label();
+            this.lbClass = new System.Windows.Forms.Label();
+            this.lbGroup = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rBAll = new System.Windows.Forms.RadioButton();
             this.rB2 = new System.Windows.Forms.RadioButton();
@@ -56,14 +56,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbToolTip, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtSubject, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cBClass, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.saveButton, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.cancelButton, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblGroupe, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btSave, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btCancel, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lbSubject, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lbClass, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lbGroup, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 2, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -77,19 +77,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(333, 305);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // label1
+            // lbToolTip
             // 
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 5);
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 61);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Bitte geben Sie das hinzuzufügendene Fach sowie die betroffene Klasse ein und wäh" +
+            this.lbToolTip.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lbToolTip, 5);
+            this.lbToolTip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbToolTip.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbToolTip.Location = new System.Drawing.Point(3, 0);
+            this.lbToolTip.Name = "lbToolTip";
+            this.lbToolTip.Size = new System.Drawing.Size(327, 61);
+            this.lbToolTip.TabIndex = 1;
+            this.lbToolTip.Text = "Bitte geben Sie das hinzuzufügendene Fach sowie die betroffene Klasse ein und wäh" +
     "len Sie anschließend noch die entsprechende Gruppenzuteilung aus:\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbToolTip.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtSubject
             // 
@@ -112,64 +112,64 @@
             this.cBClass.Size = new System.Drawing.Size(195, 24);
             this.cBClass.TabIndex = 4;
             // 
-            // saveButton
+            // btSave
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.saveButton, 2);
-            this.saveButton.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.saveButton.Location = new System.Drawing.Point(3, 247);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(126, 23);
-            this.saveButton.TabIndex = 1;
-            this.saveButton.Text = "Speichern";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.tableLayoutPanel1.SetColumnSpan(this.btSave, 2);
+            this.btSave.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btSave.Location = new System.Drawing.Point(3, 247);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(126, 23);
+            this.btSave.TabIndex = 1;
+            this.btSave.Text = "&Speichern";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // cancelButton
+            // btCancel
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.cancelButton, 2);
-            this.cancelButton.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.cancelButton.Location = new System.Drawing.Point(201, 247);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(129, 23);
-            this.cancelButton.TabIndex = 5;
-            this.cancelButton.Text = "Abbrechen";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.tableLayoutPanel1.SetColumnSpan(this.btCancel, 2);
+            this.btCancel.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btCancel.Location = new System.Drawing.Point(201, 247);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(129, 23);
+            this.btCancel.TabIndex = 5;
+            this.btCancel.Text = "&Abbrechen";
+            this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // label2
+            // lbSubject
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label2, 2);
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label2.Location = new System.Drawing.Point(88, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Fach:";
+            this.lbSubject.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbSubject.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lbSubject, 2);
+            this.lbSubject.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lbSubject.Location = new System.Drawing.Point(88, 83);
+            this.lbSubject.Name = "lbSubject";
+            this.lbSubject.Size = new System.Drawing.Size(41, 16);
+            this.lbSubject.TabIndex = 2;
+            this.lbSubject.Text = "Fach:";
             // 
-            // label3
+            // lbClass
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label3, 2);
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label3.Location = new System.Drawing.Point(77, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Klasse:";
+            this.lbClass.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbClass.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lbClass, 2);
+            this.lbClass.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.lbClass.Location = new System.Drawing.Point(77, 144);
+            this.lbClass.Name = "lbClass";
+            this.lbClass.Size = new System.Drawing.Size(52, 16);
+            this.lbClass.TabIndex = 3;
+            this.lbClass.Text = "Klasse:";
             // 
-            // lblGroupe
+            // lbGroup
             // 
-            this.lblGroupe.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblGroupe.AutoSize = true;
-            this.lblGroupe.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGroupe.Location = new System.Drawing.Point(75, 205);
-            this.lblGroupe.Name = "lblGroupe";
-            this.lblGroupe.Size = new System.Drawing.Size(54, 16);
-            this.lblGroupe.TabIndex = 6;
-            this.lblGroupe.Text = "Gruppe:";
+            this.lbGroup.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbGroup.AutoSize = true;
+            this.lbGroup.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGroup.Location = new System.Drawing.Point(75, 205);
+            this.lbGroup.Name = "lbGroup";
+            this.lbGroup.Size = new System.Drawing.Size(54, 16);
+            this.lbGroup.TabIndex = 6;
+            this.lbGroup.Text = "Gruppe:";
             // 
             // groupBox1
             // 
@@ -271,14 +271,14 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbToolTip;
         private System.Windows.Forms.TextBox txtSubject;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbSubject;
+        private System.Windows.Forms.Label lbClass;
         private System.Windows.Forms.ComboBox cBClass;
-        private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label lblGroupe;
+        private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.Label lbGroup;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rBAll;
         private System.Windows.Forms.RadioButton rB2;

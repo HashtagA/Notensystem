@@ -31,7 +31,7 @@ namespace PP_Notensystem
 
         public SchoolClass CreateSchoolClass()
         {
-            SchoolClass tmpClass = new SchoolClass(classNameTextBox .Text, tmpTurnusNumber, turnusStartDatePicker.Value, turnunsEndDatePicker.Value);
+            SchoolClass tmpClass = new SchoolClass(tbClassName .Text, tmpTurnusNumber, dpPeriodStart.Value, dpPeriodEnd.Value);
   
             return tmpClass;
         }
