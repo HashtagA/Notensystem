@@ -87,6 +87,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(327, 61);
             this.label1.TabIndex = 1;
+            this.label1.Text = "Bitte geben Sie das hinzuzufügendene Fach sowie die betroffene Klasse ein und wäh" +
+    "len Sie anschließend noch die entsprechende Gruppenzuteilung aus:\r\n";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtSubject
