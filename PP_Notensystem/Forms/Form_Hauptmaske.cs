@@ -12,13 +12,11 @@ namespace PP_Notensystem
 {
     public partial class Form_Hauptmaske : Form
     {
-        public DataBase mainDb;
-
         public Form_Hauptmaske()
         {
             InitializeComponent();
-            mainDb = new DataBase("192.168.28.130", 3306, "Hashtag", "Hashtag", "notensystem");
-            FilterList.loadSelection(ClassList, mainDb);
+            DataBase.initialize("192.168.28.130", 3306, "Hashtag", "Hashtag", "notensystem");
+            FilterList.loadSelection(ClassList);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -33,8 +31,8 @@ namespace PP_Notensystem
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            StudentList sl = new StudentList(mainDb);
-            sl.loadClass(DataList, ClassList.SelectedNode.Text);
+            StudentList sl = new StudentList();
+            sl.loadGroup(DataList, ClassList.SelectedNode.Name);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -49,7 +47,7 @@ namespace PP_Notensystem
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            mainDb.disconnect();
+            DataBase.disconnect();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,7 +57,6 @@ namespace PP_Notensystem
             if (acf.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                SchoolClass newClass = acf.CreateSchoolClass(); 
-
             }
         }
 
