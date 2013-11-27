@@ -56,6 +56,11 @@ namespace PP_Notensystem
             tmpTurnusNumber = int.Parse(rb4.Text);
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
        
 
     }   
