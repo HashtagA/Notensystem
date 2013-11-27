@@ -79,7 +79,7 @@ namespace PP_Notensystem
         /// </summary>
         private void button4_Click(object sender, EventArgs e)
         {
-            StudentImport.frmStudentImport ImportForm = new StudentImport.frmStudentImport(mainDb);
+            StudentImport.frmStudentImport ImportForm = new StudentImport.frmStudentImport();
         }
     }
 }

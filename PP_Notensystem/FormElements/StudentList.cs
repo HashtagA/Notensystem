@@ -9,26 +9,23 @@ namespace PP_Notensystem.FormElements
 {
     class StudentList
     {
-        public DataBase database;
 
-        public StudentList(DataBase db){
-            database = db;
+        public StudentList(){
+            
         }
 
-        public void loadClass(DataGridView list, string name){
+        public void loadGroup(DataGridView list, string name){
             DataTable data = new DataTable();
             list.Columns.Clear();
-            IDataReader students = database.select("SELECT s_Vorname AS Vorname, n_Nachname AS Nachname FROM personen");
+            IDataReader students = DataBase.select("SELECT s_Vorname AS Vorname, n_Nachname AS Nachname FROM personen");
             using (students){
                 data.Load(students);
                 list.DataSource = data;
             }
+
+
         }
-        public void loadClass(DataGridView list, string name, string gruppe)
-        {
-            
-        }
-        public void loadClass(DataGridView list, string name, string gruppe, string unterrichtsfach)
+        public void loadSubject(DataGridView list, string name, string unterrichtsfach)
         {
             
         }

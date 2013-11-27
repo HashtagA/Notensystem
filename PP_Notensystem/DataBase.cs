@@ -8,17 +8,17 @@ using BS2DB;
 
 namespace PP_Notensystem
 {
-    public class DataBase
+    public static class DataBase
     {
-        public IDbConnection dbCon;
-        public DBHelper.DBTransaction dbTrans;
-        private string id {get;set;}
-        private int port { get; set; }
-        private string user { get; set; }
-        private string pwd { get; set; }
-        private string db { get; set; }
+        public static IDbConnection dbCon;
+        public static DBHelper.DBTransaction dbTrans;
+        public static string id { get; set; }
+        private static int port { get; set; }
+        private static string user { get; set; }
+        private static string pwd { get; set; }
+        private static string db { get; set; }
 
-        public DataBase(string idArg, int portArg, string userArg, string pwdArg, string dbArg){
+        public static void initialize(string idArg, int portArg, string userArg, string pwdArg, string dbArg){
             id = idArg;
             port = portArg;
             user = userArg;
@@ -27,7 +27,7 @@ namespace PP_Notensystem
             connect();
         }
 
-        public void connect()
+        public static void connect()
         {
             try
             {
@@ -43,22 +43,22 @@ namespace PP_Notensystem
                 MessageBox.Show(ex.Message);
             }
         }
-        public void disconnect()
+        public static void disconnect()
         {
             dbCon.Close();
         }
-        public void reconnect() {
+        public static void reconnect() {
             dbCon = DBHelper.GetMySQLDBConnection(id, port, user, pwd, db);
             dbCon.Close();
             dbCon.Open();
         }
-        public void insert(string query)
+        public static void insert(string query)
         {
             using (dbTrans){
                 DBHelper.ExecuteScalarGetInsertedID(dbCon, query);
             }
         }
-        public IDataReader select(string query)
+        public static IDataReader select(string query)
         {
             try{
                 return DBHelper.ExecuteReader(dbCon, query);
@@ -66,6 +66,13 @@ namespace PP_Notensystem
                 MessageBox.Show(e.Message);
                 return null;
             }
+        }
+        public static IDataReader getClasses(){
+            return DataBase.select("SELECT * FROM klasse");
+        }
+        public static IDataReader getSubjects()
+        {
+            return DataBase.select("SELECT * FROM unterrichstfach");
         }
     }
 }

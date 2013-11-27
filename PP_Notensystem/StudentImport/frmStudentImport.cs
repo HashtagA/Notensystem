@@ -15,18 +15,15 @@ namespace PP_Notensystem.StudentImport
 
         #region Propertys
 
-        private DataBase _mainDB;
-
         #endregion
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="newDB">DataBase to Connect</param>
-        public frmStudentImport(DataBase newDB)
+        public frmStudentImport()
         {
             InitializeComponent();
-            this._mainDB = newDB;
             txtPath.Text = "C:\\temp\\5aTIX_GDT_N.csv";
         }
 
@@ -94,7 +91,7 @@ namespace PP_Notensystem.StudentImport
         private void btnImportStudent_Click(object sender, EventArgs e)
         {
             //Null Refernece Exception
-            CSVStudentImport Import = new CSVStudentImport(txtPath.Text,_mainDB);
+            CSVStudentImport Import = new CSVStudentImport(txtPath.Text);
             Import.SchoolClassName = txtScholClass.Text;
             Import.SchoolGroupName = txtGrp.Text;
             Import.SubjectName = txtSubject.Text;

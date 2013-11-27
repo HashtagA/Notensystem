@@ -12,14 +12,12 @@ namespace PP_Notensystem.StudentImport
     {
     #region Konstruktoren
 
-        public CSVStudentImport(string newPfad, DataBase newDB)
+        public CSVStudentImport(string newPfad)
         {
             //Connect
             //this._mainDB = new DataBase("192.168.28.130", 3306, "Hashtag", "Hashtag", "notensystem");
             //this._mainDB = new DataBase("192.168.28.130", 3306, "test1", "test", "cdcol");
             //_mainDB.connect();
-
-            this._mainDB = newDB;
 
             StreamReader strStudents = new StreamReader(newPfad);
 
@@ -44,8 +42,6 @@ namespace PP_Notensystem.StudentImport
     #endregion
 
     #region Probertys
-
-        private DataBase _mainDB {get;set;}
 
 
         /// <summary>
@@ -85,7 +81,7 @@ namespace PP_Notensystem.StudentImport
             string test = "SELECT * FROM klasse WHERE s_Description LIKE '" + this.SchoolClassName + "'";
             string selClass = "SELECT * FROM klasse WHERE s_Description LIKE '" + this.SchoolClassName + "'";
             selClass = "SELECT * FROM klasse";
-            IDataReader DataReadClass = _mainDB.select(selClass);
+            IDataReader DataReadClass = DataBase.select(selClass);
             DataTable tblClass = new DataTable("klasse");
             tblClass.Load(DataReadClass);
 
