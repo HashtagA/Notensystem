@@ -73,5 +73,13 @@ namespace PP_Notensystem
 
 
         }
+
+        /// <summary>
+        /// CSV Import
+        /// </summary>
+        private void button4_Click(object sender, EventArgs e)
+        {
+            StudentImport.frmStudentImport ImportForm = new StudentImport.frmStudentImport(mainDb);
+        }
     }
 }

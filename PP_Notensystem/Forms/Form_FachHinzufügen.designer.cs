@@ -87,25 +87,29 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(327, 61);
             this.label1.TabIndex = 1;
-            this.label1.Text = "gr";
+            this.label1.Text = "Bitte geben Sie das hinzuzufügendene Fach sowie die betroffene Klasse ein und wäh" +
+    "len Sie anschließend noch die entsprechende Gruppenzuteilung aus:\r\n";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtSubject
             // 
             this.txtSubject.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tableLayoutPanel1.SetColumnSpan(this.txtSubject, 3);
-            this.txtSubject.Location = new System.Drawing.Point(135, 81);
+            this.txtSubject.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.txtSubject.Location = new System.Drawing.Point(135, 80);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(195, 20);
+            this.txtSubject.Size = new System.Drawing.Size(195, 22);
             this.txtSubject.TabIndex = 1;
             // 
             // cBClass
             // 
             this.cBClass.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tableLayoutPanel1.SetColumnSpan(this.cBClass, 3);
+            this.cBClass.Font = new System.Drawing.Font("Arial", 9.75F);
             this.cBClass.FormattingEnabled = true;
-            this.cBClass.Location = new System.Drawing.Point(135, 142);
+            this.cBClass.Location = new System.Drawing.Point(135, 140);
             this.cBClass.Name = "cBClass";
-            this.cBClass.Size = new System.Drawing.Size(195, 21);
+            this.cBClass.Size = new System.Drawing.Size(195, 24);
             this.cBClass.TabIndex = 4;
             // 
             // saveButton
@@ -185,9 +189,10 @@
             // rBAll
             // 
             this.rBAll.AutoSize = true;
+            this.rBAll.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rBAll.Location = new System.Drawing.Point(129, 20);
             this.rBAll.Name = "rBAll";
-            this.rBAll.Size = new System.Drawing.Size(36, 17);
+            this.rBAll.Size = new System.Drawing.Size(41, 20);
             this.rBAll.TabIndex = 4;
             this.rBAll.TabStop = true;
             this.rBAll.Text = "All";
@@ -197,9 +202,10 @@
             // rB2
             // 
             this.rB2.AutoSize = true;
+            this.rB2.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rB2.Location = new System.Drawing.Point(81, 32);
             this.rB2.Name = "rB2";
-            this.rB2.Size = new System.Drawing.Size(31, 17);
+            this.rB2.Size = new System.Drawing.Size(33, 20);
             this.rB2.TabIndex = 3;
             this.rB2.TabStop = true;
             this.rB2.Text = "2";
@@ -209,9 +215,10 @@
             // rBV
             // 
             this.rBV.AutoSize = true;
+            this.rBV.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rBV.Location = new System.Drawing.Point(7, 32);
             this.rBV.Name = "rBV";
-            this.rBV.Size = new System.Drawing.Size(32, 17);
+            this.rBV.Size = new System.Drawing.Size(35, 20);
             this.rBV.TabIndex = 2;
             this.rBV.TabStop = true;
             this.rBV.Text = "V";
@@ -221,9 +228,10 @@
             // rB1
             // 
             this.rB1.AutoSize = true;
+            this.rB1.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rB1.Location = new System.Drawing.Point(81, 9);
             this.rB1.Name = "rB1";
-            this.rB1.Size = new System.Drawing.Size(31, 17);
+            this.rB1.Size = new System.Drawing.Size(33, 20);
             this.rB1.TabIndex = 1;
             this.rB1.TabStop = true;
             this.rB1.Text = "1";
@@ -233,9 +241,10 @@
             // rBN
             // 
             this.rBN.AutoSize = true;
+            this.rBN.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rBN.Location = new System.Drawing.Point(7, 9);
             this.rBN.Name = "rBN";
-            this.rBN.Size = new System.Drawing.Size(33, 17);
+            this.rBN.Size = new System.Drawing.Size(35, 20);
             this.rBN.TabIndex = 0;
             this.rBN.TabStop = true;
             this.rBN.Text = "N";

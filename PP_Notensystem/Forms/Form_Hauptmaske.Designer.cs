@@ -138,30 +138,33 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(532, 2);
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.button1.Location = new System.Drawing.Point(429, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(107, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Neue Klasse";
+            this.button1.Text = "Neue &Klasse";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(613, 2);
+            this.button2.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.button2.Location = new System.Drawing.Point(539, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 23);
+            this.button2.Size = new System.Drawing.Size(121, 23);
             this.button2.TabIndex = 8;
-            this.button2.Text = "Klasse bearb.";
+            this.button2.Text = "Klasse &bearb.";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(710, 2);
+            this.button3.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.button3.Location = new System.Drawing.Point(663, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(109, 23);
             this.button3.TabIndex = 9;
-            this.button3.Text = "Neues Fach";
+            this.button3.Text = "Neues &Fach";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -177,6 +180,7 @@
             // 
             // ClassList
             // 
+            this.ClassList.Font = new System.Drawing.Font("Arial", 9.75F);
             this.ClassList.Location = new System.Drawing.Point(12, 29);
             this.ClassList.Name = "ClassList";
             treeNode1.Name = "Knoten6";
@@ -253,38 +257,43 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label3.Location = new System.Drawing.Point(657, 475);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.Size = new System.Drawing.Size(41, 16);
             this.label3.TabIndex = 18;
             this.label3.Text = "DATE";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label4.Location = new System.Drawing.Point(829, 475);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 19;
             this.label4.Text = "USER";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label2.Location = new System.Drawing.Point(751, 475);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 20;
             this.label2.Text = "TIME";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(791, 2);
+            this.button4.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.button4.Location = new System.Drawing.Point(775, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(91, 23);
             this.button4.TabIndex = 21;
-            this.button4.Text = "CSV-Import";
+            this.button4.Text = "CSV-&Import";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form_Hauptmaske
             // 
