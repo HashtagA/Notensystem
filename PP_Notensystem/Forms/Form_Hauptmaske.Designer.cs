@@ -95,6 +95,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btImport = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataList)).BeginInit();
             this.SuspendLayout();
@@ -296,11 +297,22 @@
             this.btImport.UseVisualStyleBackColor = true;
             this.btImport.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(348, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 22;
+            this.button5.Text = "Gesamt";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form_Hauptmaske
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 494);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.btImport);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -337,6 +349,7 @@
         private System.Windows.Forms.DataGridView DataList;
         private System.Windows.Forms.DataGridViewTextBoxColumn test;
         public System.Windows.Forms.TreeView ClassList;
+        private System.Windows.Forms.Button button5;
 
 
     }

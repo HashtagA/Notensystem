@@ -81,5 +81,19 @@ namespace PP_Notensystem
         {
             StudentImport.frmStudentImport ImportForm = new StudentImport.frmStudentImport();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string tmp = ClassList.SelectedNode.Name;
+            if (ClassList.SelectedNode.Level == 1)
+            {
+                Form_GegenstandGesamtAnsicht f = new Form_GegenstandGesamtAnsicht(ClassList.SelectedNode.Name);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("ERROOOOOR");
+            }
+        }
     }
 }
