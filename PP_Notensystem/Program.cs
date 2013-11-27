@@ -16,6 +16,7 @@ namespace PP_Notensystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form_Hauptmaske());
+            //Application.Run(new StudentImport.frmStudentImport(new DataBase("192.168.28.130", 3306, "Hashtag", "Hashtag", "notensystem")));
         }
     }
 }
