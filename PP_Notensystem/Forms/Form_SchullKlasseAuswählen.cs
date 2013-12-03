@@ -89,8 +89,12 @@ namespace PP_Notensystem.Forms
         {
             string selClass = "SELECT id_Klasse, s_Description, dt_Beginn, dt_Ende, n_Turnus From klasse Where s_Description LIKE '" + this._ClassDescription + "'";
             IDataReader Reader = DataBase.select(selClass);
-            _tblSchoolClasses.Load(Reader);
-
+            using (Reader)
+            {
+                
+                    _tblSchoolClasses.Load(Reader);
+             
+            }
             _tblSchoolClasses.Columns[1].ColumnName = "Name";
             _tblSchoolClasses.Columns[2].ColumnName = "Beginn";
             _tblSchoolClasses.Columns[3].ColumnName = "Ende";

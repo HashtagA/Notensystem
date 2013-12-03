@@ -80,12 +80,14 @@ namespace PP_Notensystem.StudentImport
         {
             string test = "SELECT * FROM klasse WHERE s_Description LIKE '" + this.SchoolClassName + "'";
             string selClass = "SELECT * FROM klasse WHERE s_Description LIKE '" + this.SchoolClassName + "'";
-            selClass = "SELECT * FROM klasse";
+            //selClass = "SELECT * FROM klasse";
             IDataReader DataReadClass = DataBase.select(selClass);
             DataTable tblClass = new DataTable("klasse");
             tblClass.Load(DataReadClass);
 
 
+
+            /*
             test = string.Empty;
             foreach (DataRow row in tblClass.Rows)
             {
@@ -97,7 +99,7 @@ namespace PP_Notensystem.StudentImport
             }
 
             test = string.Empty;
-
+            */
 
             
         }

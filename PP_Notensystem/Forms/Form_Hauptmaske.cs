@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PP_Notensystem.FormElements;
-
+using PP_Notensystem.StudentImport;
 namespace PP_Notensystem
 {
     public partial class Form_Hauptmaske : Form
@@ -79,7 +79,8 @@ namespace PP_Notensystem
         /// </summary>
         private void button4_Click(object sender, EventArgs e)
         {
-            StudentImport.frmStudentImport ImportForm = new StudentImport.frmStudentImport();
+            frmStudentImport Import = new frmStudentImport();
+            Import.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
