@@ -93,7 +93,7 @@ namespace PP_Notensystem
             }
             else
             {
-                MessageBox.Show("Ein Unterrichtsfach muss ausgewählt werden!");
+                MessageBox.Show("ERROOOOOR");
             }
         }
     }
