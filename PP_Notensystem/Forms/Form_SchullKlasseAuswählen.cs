@@ -50,7 +50,7 @@ namespace PP_Notensystem.Forms
         /// <summary>
         /// ID der Klassse die ausgewählt wurde
         /// </summary>
-        public int KlassID { get; set; }
+        public int SelectedKlassID { get; set; }
 
          
 
@@ -70,7 +70,7 @@ namespace PP_Notensystem.Forms
             else
             {
             DataGridViewRow row = GridShoolClass.SelectedRows[0];
-            this.KlassID = (int)row.Cells[0].Value;
+            this.SelectedKlassID = (int)row.Cells[0].Value;
             this.Close();
             }
         }
@@ -108,6 +108,11 @@ namespace PP_Notensystem.Forms
         }
 
     #endregion
+
+        private void Form_SchullKlasseAuswählen_Load(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

@@ -98,6 +98,7 @@
             this.Name = "Form_SchullKlasseAuswählen";
             this.ShowIcon = false;
             this.Text = "Klasse auswählen";
+            this.Load += new System.EventHandler(this.Form_SchullKlasseAuswählen_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridShoolClass)).EndInit();
             this.ResumeLayout(false);

@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using PP_Notensystem;
+using PP_Notensystem.Forms;
+using System.Windows.Forms;
 
 namespace PP_Notensystem.StudentImport
 {
@@ -85,6 +87,14 @@ namespace PP_Notensystem.StudentImport
             DataTable tblClass = new DataTable("klasse");
             tblClass.Load(DataReadClass);
 
+            Form_DatensatzAuswählen auswählen = new Form_DatensatzAuswählen("Where s_Description LIKE '" + this.SchoolClassName + "'" ,Form_DatensatzAuswählen.DataArt.SchoolClass);
+            auswählen.ShowDialog();
+
+            //Form_SchullKlasseAuswählen auswählen = new Form_SchullKlasseAuswählen(this.SchoolClassName);
+            //auswählen.ShowDialog();
+
+            //SchoolClassID = auswählen.SelectedKlassID;
+            
 
 
             /*

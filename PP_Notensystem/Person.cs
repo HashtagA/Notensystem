@@ -22,7 +22,9 @@ namespace PP_Notensystem
 
         public Person()
         {
+            
         }
+    
 
         /// <param name="newFirstName">Vorname der Person</param>
         /// <param name="newLastName">Nachname der Person</param>
@@ -88,5 +90,24 @@ namespace PP_Notensystem
 
 
         #endregion
+
+    #region Methoden
+
+        /// <summary>
+        /// Fügt einen 
+        /// </summary>
+        /// <param name="funcFirstName"></param>
+        /// <param name="funcLastName"></param>
+        /// <param name="funcIsLeher">Wenn True gesetzt wird dann wird die Person als Lehrer hinzugefügt</param>
+        public void AddPerson(string funcFirstName, string funcLastName, bool funcIsLeher)
+        {
+
+            string PersInsert = "INSERT INTO `notensystem`.`personen` (`id_Schüler`, `s_Vorname`, `n_Nachname`, `b_IsLehrer`) VALUES (NULL, '" + funcFirstName + "', '" + funcLastName + "', '" + funcIsLeher.ToString() + "');";
+
+            DataBase.insert(PersInsert);
+
+        }
+
+    #endregion
     }
 }
