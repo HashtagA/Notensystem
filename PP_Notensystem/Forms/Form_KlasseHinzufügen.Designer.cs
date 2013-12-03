@@ -116,9 +116,9 @@
             this.lbStartDate.Font = new System.Drawing.Font("Arial", 9.75F);
             this.lbStartDate.Location = new System.Drawing.Point(3, 149);
             this.lbStartDate.Name = "lbStartDate";
-            this.lbStartDate.Size = new System.Drawing.Size(160, 16);
+            this.lbStartDate.Size = new System.Drawing.Size(164, 16);
             this.lbStartDate.TabIndex = 3;
-            this.lbStartDate.Text = "Start Datum des Turnuses";
+            this.lbStartDate.Text = "Start Datum des Turnuses:";
             // 
             // lbEnddate
             // 
@@ -127,9 +127,9 @@
             this.lbEnddate.Font = new System.Drawing.Font("Arial", 9.75F);
             this.lbEnddate.Location = new System.Drawing.Point(3, 195);
             this.lbEnddate.Name = "lbEnddate";
-            this.lbEnddate.Size = new System.Drawing.Size(155, 16);
+            this.lbEnddate.Size = new System.Drawing.Size(159, 16);
             this.lbEnddate.TabIndex = 4;
-            this.lbEnddate.Text = "End Datum des Turnuses";
+            this.lbEnddate.Text = "End Datum des Turnuses:";
             // 
             // tbClassName
             // 

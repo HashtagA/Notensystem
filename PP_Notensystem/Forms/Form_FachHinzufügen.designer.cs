@@ -87,7 +87,7 @@
             this.lbToolTip.Name = "lbToolTip";
             this.lbToolTip.Size = new System.Drawing.Size(327, 61);
             this.lbToolTip.TabIndex = 1;
-            this.lbToolTip.Text = "Bitte geben Sie das hinzuzufügendene Fach sowie die betroffene Klasse ein und wäh" +
+            this.lbToolTip.Text = "Bitte geben Sie das hinzuzufügendene Fach sowie die gewünschte Klasse ein und wäh" +
     "len Sie anschließend noch die entsprechende Gruppenzuteilung aus:\r\n";
             this.lbToolTip.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -111,6 +111,7 @@
             this.cBClass.Name = "cBClass";
             this.cBClass.Size = new System.Drawing.Size(195, 24);
             this.cBClass.TabIndex = 4;
+            this.cBClass.SelectedIndexChanged += new System.EventHandler(this.cBClass_SelectedIndexChanged);
             // 
             // btSave
             // 
