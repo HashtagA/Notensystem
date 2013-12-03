@@ -32,7 +32,14 @@ namespace PP_Notensystem
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             StudentList sl = new StudentList();
-            sl.loadGroup(DataList, ClassList.SelectedNode.Name);
+
+            if (ClassList.SelectedNode.Level==1){
+                sl.loadGroup(DataList, ClassList.SelectedNode.Tag.ToString());
+            }else{
+                sl.loadClass(DataList, ClassList.SelectedNode.Tag.ToString());
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
