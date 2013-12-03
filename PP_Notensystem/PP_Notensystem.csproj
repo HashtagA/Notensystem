@@ -73,6 +73,12 @@
     <Compile Include="Forms\Form_GegenstandGesamtAnsicht.Designer.cs">
       <DependentUpon>Form_GegenstandGesamtAnsicht.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_SchullKlasseAuswählen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_SchullKlasseAuswählen.Designer.cs">
+      <DependentUpon>Form_SchullKlasseAuswählen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_GegenstandGesamtAnsicht.resx">
       <DependentUpon>Form_GegenstandGesamtAnsicht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_SchullKlasseAuswählen.resx">
+      <DependentUpon>Form_SchullKlasseAuswählen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

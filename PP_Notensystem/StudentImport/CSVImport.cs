@@ -98,10 +98,7 @@ namespace PP_Notensystem.StudentImport
 
             test = string.Empty;
 
-            if (tblClass.Rows.Count == 0)
-            {
-                string InsClass = "Insert INTO";
-            }
+
             
         }
 
