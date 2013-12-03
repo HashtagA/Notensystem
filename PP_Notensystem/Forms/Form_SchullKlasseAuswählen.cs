@@ -17,10 +17,9 @@ namespace PP_Notensystem.Forms
 {
     public partial class Form_SchullKlasseAuswählen : Form
     {
-        public Form_SchullKlasseAuswählen(DataBase newDB, string newClassDescription)
+        public Form_SchullKlasseAuswählen(string newClassDescription)
         {
             InitializeComponent();
-            this._MainDB = newDB;
             this._ClassDescription = newClassDescription;
             _tblSchoolClasses = new DataTable("Klasse " + this._ClassDescription);
 
@@ -34,8 +33,6 @@ namespace PP_Notensystem.Forms
         }
 
     #region Propertys
-
-        private DataBase _MainDB;
 
         private DataTable _tblSchoolClasses;
 
@@ -91,7 +88,7 @@ namespace PP_Notensystem.Forms
         private void RefreshTable()
         {
             string selClass = "SELECT id_Klasse, s_Description, dt_Beginn, dt_Ende, n_Turnus From klasse Where s_Description LIKE '" + this._ClassDescription + "'";
-            IDataReader Reader = _MainDB.select(selClass);
+            IDataReader Reader = DataBase.select(selClass);
             _tblSchoolClasses.Load(Reader);
 
             _tblSchoolClasses.Columns[1].ColumnName = "Name";

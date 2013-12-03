@@ -33,9 +33,9 @@ namespace PP_Notensystem.FormElements
 
                     foreach(TreeNode n in nodes){
                         if (n.Tag.ToString() == groups.GetInt32(3).ToString()){
-                            TreeNode tmp = new TreeNode(groups.GetString(6) + " - " + groups.GetString(1));
+                            /*TreeNode tmp = new TreeNode(groups.GetString(6) + " - " + groups.GetString(1));
                             tmp.Tag = groups.GetInt32(0).ToString();
-                            n.Nodes.Add(tmp);
+                            n.Nodes.Add(tmp);*/
                         }
                     }
                 }
