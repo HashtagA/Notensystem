@@ -12,6 +12,7 @@ namespace PP_Notensystem
 {
     public partial class Form_Hauptmaske : Form
     {
+        private  StudentList list;
         public Form_Hauptmaske()
         {
             InitializeComponent();
@@ -31,12 +32,12 @@ namespace PP_Notensystem
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            StudentList sl = new StudentList();
+            list = new StudentList(DataList);
 
             if (ClassList.SelectedNode.Level==1){
-                sl.loadGroup(DataList, ClassList.SelectedNode.Tag.ToString());
+                list.loadGroup(ClassList.SelectedNode.Tag.ToString());
             }else{
-                sl.loadClass(DataList, ClassList.SelectedNode.Tag.ToString());
+                list.loadClass(ClassList.SelectedNode.Tag.ToString());
             }
 
 
@@ -102,6 +103,14 @@ namespace PP_Notensystem
             {
                 MessageBox.Show("ERROOOOOR");
             }
+        }
+
+        private void DataList_CellEndEdit(object sender, DataGridViewCellEventArgs e){
+           list.sync();
+           DataGridView dgv = (DataGridView)sender;
+           if(!dgv.CurrentRow.IsNewRow){
+              /*  dgv.*/
+           }
         }
     }
 }
