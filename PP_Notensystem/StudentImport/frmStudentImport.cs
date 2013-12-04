@@ -90,14 +90,20 @@ namespace PP_Notensystem.StudentImport
         
         private void btnImportStudent_Click(object sender, EventArgs e)
         {
-            //Null Refernece Exception
-            CSVStudentImport Import = new CSVStudentImport(txtPath.Text);
-            Import.SchoolClassName = txtScholClass.Text;
-            Import.SchoolGroupName = txtGrp.Text;
-            Import.SubjectName = txtSubject.Text;
+            try
+            {
+                //IO Exception
+                CSVStudentImport Import = new CSVStudentImport(txtPath.Text);
+                Import.SchoolClassName = txtScholClass.Text;
+                Import.SchoolGroupName = txtGrp.Text;
+                Import.SchoolSubjectName = txtSubject.Text;
 
-            Import.ValidateClassSubject();
-
+                Import.ValidateClassSubject();
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 

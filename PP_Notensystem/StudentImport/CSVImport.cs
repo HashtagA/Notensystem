@@ -63,8 +63,15 @@ namespace PP_Notensystem.StudentImport
         /// ID der Gruppe
         /// </summary>
         public int SchoolGroupID { get; set; }
-
-        public string SubjectName { get; set; }
+        
+        /// <summary>
+        /// Name des Faches
+        /// </summary>
+        public string SchoolSubjectName { get; set; }
+        /// <summary>
+        /// ID des Faches
+        /// </summary>
+        public int SchoolSubjectID { get; set; }
 
         private List<Person> _ImportStudents = new List<Person>();
         /// <summary>
@@ -89,6 +96,16 @@ namespace PP_Notensystem.StudentImport
 
             Form_DatensatzAuswählen auswählen = new Form_DatensatzAuswählen("Where s_Description LIKE '" + this.SchoolClassName + "'" ,Form_DatensatzAuswählen.DataArt.SchoolClass);
             auswählen.ShowDialog();
+            this.SchoolClassID = auswählen.SelectedID;
+            MessageBox.Show(auswählen.SelectedID.ToString());
+
+            auswählen = new Form_DatensatzAuswählen("WHERE s_Description LIKE '" + this.SchoolSubjectName + "'", Form_DatensatzAuswählen.DataArt.SchoolSubject);
+            auswählen.ShowDialog();
+            this.SchoolSubjectID = auswählen.SelectedID;
+            MessageBox.Show(auswählen.SelectedID.ToString());
+
+
+
 
             //Form_SchullKlasseAuswählen auswählen = new Form_SchullKlasseAuswählen(this.SchoolClassName);
             //auswählen.ShowDialog();

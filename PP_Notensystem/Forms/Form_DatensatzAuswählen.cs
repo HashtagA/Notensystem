@@ -11,10 +11,16 @@ namespace PP_Notensystem.Forms
 {
     public partial class Form_DatensatzAuswählen : Form
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newWhereSelect">School = s_Description, Subject = s_Description</param>
+        /// <param name="newDataArt"></param>
         public Form_DatensatzAuswählen(string newWhereSelect, DataArt newDataArt)
         {
             this.WhereSelect = newWhereSelect;
             InitializeComponent();
+            this.DataArtZumAuswählen = newDataArt;
             Refresh(this.DataArtZumAuswählen);
         }
 
@@ -24,7 +30,6 @@ namespace PP_Notensystem.Forms
         public enum DataArt
         {
             SchoolClass,
-            Student,
             SchoolSubject           
         }
 
@@ -54,6 +59,9 @@ namespace PP_Notensystem.Forms
                 case DataArt.SchoolClass:
                     RefreshSchoolClass();
                     break;
+                case DataArt.SchoolSubject:
+                    RefreshScoolSubject();
+                    break;
 
             }
 
@@ -63,9 +71,13 @@ namespace PP_Notensystem.Forms
            
         }
 
+        /// <summary>
+        /// School
+        /// </summary>
         private void RefreshSchoolClass()
         {
             //string selClass = "SELECT id_Klasse as " + IDCollumName + " , s_Description, dt_Beginn, dt_Ende, n_Turnus From klasse Where s_Description LIKE '" + this._ClassDescription + "'";
+            
             string selClass = "SELECT id_Klasse as " + IDCollumName + " , s_Description, dt_Beginn, dt_Ende, n_Turnus From klasse " + this.WhereSelect ;
             IDataReader Reader = DataBase.select(selClass);
             using (Reader)
@@ -81,6 +93,25 @@ namespace PP_Notensystem.Forms
            
 
         }
+
+        /// <summary>
+        /// Subject
+        /// </summary>
+        private void RefreshScoolSubject()
+        {
+            string selClass = "SELECT id_unterrichstfach as " + IDCollumName + " , s_Description From unterrichstfach " + this.WhereSelect;
+            IDataReader Reader = DataBase.select(selClass);
+            using (Reader)
+            {
+
+                _TableData.Load(Reader);
+
+            }
+            _TableData.Columns[1].ColumnName = "Name";
+           
+
+         }
+
     #endregion
 
         private void btnSelectData_Click(object sender, EventArgs e)
