@@ -84,6 +84,7 @@
             this.btnAddData.TabIndex = 3;
             this.btnAddData.Text = "Neu Hinzufügen";
             this.btnAddData.UseVisualStyleBackColor = true;
+            this.btnAddData.Click += new System.EventHandler(this.btnAddData_Click);
             // 
             // Form_DatensatzAuswählen
             // 

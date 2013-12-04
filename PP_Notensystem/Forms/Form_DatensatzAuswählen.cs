@@ -135,5 +135,18 @@ namespace PP_Notensystem.Forms
                 throw new ArgumentException("Die ID Collum hat nicht denn Index 0 im Datagrid (erste Stelle)");
             }
         }
+
+        private void btnAddData_Click(object sender, EventArgs e)
+        {
+            switch (this.DataArtZumAuswählen)
+            {
+                case DataArt.SchoolSubject:
+                    MessageBox.Show("ProtTyp");
+                    break;
+                case DataArt.SchoolClass:
+                    MessageBox.Show("ProtTyp");
+                    break;
+            }
+        }
     }
 }
