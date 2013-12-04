@@ -22,6 +22,8 @@ namespace PP_Notensystem.Forms
             InitializeComponent();
             this.DataArtZumAuswählen = newDataArt;
             Refresh(this.DataArtZumAuswählen);
+
+            this.GridData.Rows[0].Selected = true;
         }
 
 
@@ -120,12 +122,12 @@ namespace PP_Notensystem.Forms
             {
                 if (GridData.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Wähle zuerst ein Klasse aus indem du auf das graue Feld links vom Klassenamen klickst",
+                    MessageBox.Show("Wähle zuerst einen Datensatz aus indem du auf das graue Feld links vor dem Datensatz klickst",
                         string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    DataGridViewRow row = GridData.SelectedRows[0];
+                    DataGridViewRow row = GridData.SelectedRows[0];                    
                     this.SelectedID = (int)row.Cells[0].Value;
                     this.Close();
                 }
@@ -141,10 +143,10 @@ namespace PP_Notensystem.Forms
             switch (this.DataArtZumAuswählen)
             {
                 case DataArt.SchoolSubject:
-                    MessageBox.Show("ProtTyp");
+                    MessageBox.Show("Prottyp");
                     break;
                 case DataArt.SchoolClass:
-                    MessageBox.Show("ProtTyp");
+                    MessageBox.Show("Prottyp");
                     break;
             }
         }

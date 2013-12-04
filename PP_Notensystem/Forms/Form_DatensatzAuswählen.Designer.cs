@@ -38,6 +38,8 @@
             // 
             // GridData
             // 
+            this.GridData.AllowUserToAddRows = false;
+            this.GridData.AllowUserToDeleteRows = false;
             this.GridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.GridData, 3);
             this.GridData.Dock = System.Windows.Forms.DockStyle.Fill;

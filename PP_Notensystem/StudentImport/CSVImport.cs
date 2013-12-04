@@ -97,14 +97,15 @@ namespace PP_Notensystem.StudentImport
             Form_DatensatzAuswählen auswählen = new Form_DatensatzAuswählen("Where s_Description LIKE '" + this.SchoolClassName + "'" ,Form_DatensatzAuswählen.DataArt.SchoolClass);
             auswählen.ShowDialog();
             this.SchoolClassID = auswählen.SelectedID;
-            MessageBox.Show(auswählen.SelectedID.ToString());
 
             auswählen = new Form_DatensatzAuswählen("WHERE s_Description LIKE '" + this.SchoolSubjectName + "'", Form_DatensatzAuswählen.DataArt.SchoolSubject);
             auswählen.ShowDialog();
             this.SchoolSubjectID = auswählen.SelectedID;
-            MessageBox.Show(auswählen.SelectedID.ToString());
 
+            string InsertGroup = "Insert into gruppe (s_Description, id_Unterrichstfach , id_Klasse) values  ('"
+                + this.SchoolGroupName + "', " + this.SchoolSubjectID.ToString() + ", " + this.SchoolClassID + ")";
 
+            DataBase.insert(InsertGroup);
 
 
             //Form_SchullKlasseAuswählen auswählen = new Form_SchullKlasseAuswählen(this.SchoolClassName);
