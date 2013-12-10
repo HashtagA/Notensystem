@@ -32,7 +32,12 @@ namespace PP_Notensystem
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             StudentList sl = new StudentList();
-            sl.loadGroup(DataList, ClassList.SelectedNode.Tag);
+            if(ClassList.SelectedNode.Level==0){
+                sl.loadGroup(DataList, (string)ClassList.SelectedNode.Tag);
+            }else{
+                sl.loadSubject(DataList, (string)ClassList.SelectedNode.Tag);
+            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -72,6 +77,10 @@ namespace PP_Notensystem
             }*/
 
 
+        }
+
+        private void DataList_CellEndEdit(object sender, DataGridViewCellEventArgs e){
+            //string txt = DataList.CurrentCell.FormattedValue;
         }
     }
 }

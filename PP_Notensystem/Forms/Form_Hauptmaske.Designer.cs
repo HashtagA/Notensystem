@@ -129,7 +129,7 @@
             this.tableLayoutPanel1.SetRowSpan(this.DataList, 2);
             this.DataList.Size = new System.Drawing.Size(598, 224);
             this.DataList.TabIndex = 22;
-            this.DataList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.DataList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataList_CellEndEdit);
             // 
             // test
             // 
