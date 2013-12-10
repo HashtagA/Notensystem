@@ -14,10 +14,10 @@ namespace PP_Notensystem.FormElements
             
         }
 
-        public void loadGroup(DataGridView list, string name){
+        public void loadGroup(DataGridView list, object name){
             DataTable data = new DataTable();
             list.Columns.Clear();
-            IDataReader students = DataBase.select("SELECT s_Vorname AS Vorname, n_Nachname AS Nachname FROM personen");
+            IDataReader students = DataBase.select("SELECT p.s_Vorname AS Vorname, p.n_Nachname AS Nachname FROM personen p JOIN gruppeschueler gs ON(gs.id_Schueler=p.id_Schüler) WHERE gs.id_Gruppe="+name);
             using (students){
                 data.Load(students);
                 list.DataSource = data;
