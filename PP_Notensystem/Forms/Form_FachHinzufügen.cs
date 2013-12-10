@@ -61,6 +61,12 @@ namespace PP_Notensystem
             tmpGroupe = rBAll.Text;
         }
 
+        private void cBClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // ClassList c1 = new ClassList();
+            // cl.loadGroup(DataList, ClassList.SelectedNode.Tag);
+        }
+
 
     }
 }

@@ -107,6 +107,7 @@
             this.cBClass.Name = "cBClass";
             this.cBClass.Size = new System.Drawing.Size(195, 21);
             this.cBClass.TabIndex = 4;
+            this.cBClass.SelectedIndexChanged += new System.EventHandler(this.cBClass_SelectedIndexChanged);
             // 
             // saveButton
             // 
