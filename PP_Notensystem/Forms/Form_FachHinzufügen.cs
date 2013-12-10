@@ -21,7 +21,6 @@ namespace PP_Notensystem
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            
             DialogResult = DialogResult.OK;
         }
 
@@ -60,17 +59,6 @@ namespace PP_Notensystem
         private void rBAll_CheckedChanged(object sender, EventArgs e)
         {
             tmpGroupe = rBAll.Text;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cBClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-
         }
 
 

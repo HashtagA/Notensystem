@@ -7,12 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PP_Notensystem.FormElements;
-using PP_Notensystem.StudentImport;
+
 namespace PP_Notensystem
 {
     public partial class Form_Hauptmaske : Form
     {
-        private  StudentList list;
         public Form_Hauptmaske()
         {
             InitializeComponent();
@@ -32,15 +31,8 @@ namespace PP_Notensystem
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            list = new StudentList(DataList);
-
-            if (ClassList.SelectedNode.Level==1){
-                list.loadGroup(ClassList.SelectedNode.Tag.ToString());
-            }else{
-                list.loadClass(ClassList.SelectedNode.Tag.ToString());
-            }
-
-
+            StudentList sl = new StudentList();
+            sl.loadGroup(DataList, ClassList.SelectedNode.Name);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -80,37 +72,6 @@ namespace PP_Notensystem
             }*/
 
 
-        }
-
-        /// <summary>
-        /// CSV Import
-        /// </summary>
-        private void button4_Click(object sender, EventArgs e)
-        {
-            frmStudentImport Import = new frmStudentImport();
-            Import.ShowDialog();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            string tmp = ClassList.SelectedNode.Name;
-            if (ClassList.SelectedNode.Level == 1)
-            {
-                Form_GegenstandGesamtAnsicht f = new Form_GegenstandGesamtAnsicht(ClassList.SelectedNode.Name);
-                f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("ERROOOOOR");
-            }
-        }
-
-        private void DataList_CellEndEdit(object sender, DataGridViewCellEventArgs e){
-           list.sync();
-           DataGridView dgv = (DataGridView)sender;
-           if(!dgv.CurrentRow.IsNewRow){
-              /*  dgv.*/
-           }
         }
     }
 }

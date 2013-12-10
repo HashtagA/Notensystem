@@ -31,7 +31,7 @@ namespace PP_Notensystem
 
         public SchoolClass CreateSchoolClass()
         {
-            SchoolClass tmpClass = new SchoolClass(tbClassName .Text, tmpTurnusNumber, dpPeriodStart.Value, dpPeriodEnd.Value);
+            SchoolClass tmpClass = new SchoolClass(classNameTextBox .Text, tmpTurnusNumber, turnusStartDatePicker.Value, turnunsEndDatePicker.Value);
   
             return tmpClass;
         }
@@ -54,11 +54,6 @@ namespace PP_Notensystem
         private void rb4_CheckedChanged(object sender, EventArgs e)
         {
             tmpTurnusNumber = int.Parse(rb4.Text);
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
        

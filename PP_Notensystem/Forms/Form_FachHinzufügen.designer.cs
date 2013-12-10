@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addSubject));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbToolTip = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.cBClass = new System.Windows.Forms.ComboBox();
-            this.btSave = new System.Windows.Forms.Button();
-            this.btCancel = new System.Windows.Forms.Button();
-            this.lbSubject = new System.Windows.Forms.Label();
-            this.lbClass = new System.Windows.Forms.Label();
-            this.lbGroup = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblGroupe = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rBAll = new System.Windows.Forms.RadioButton();
             this.rB2 = new System.Windows.Forms.RadioButton();
@@ -56,14 +56,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.lbToolTip, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtSubject, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cBClass, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btSave, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btCancel, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lbSubject, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbClass, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lbGroup, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.saveButton, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cancelButton, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblGroupe, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 2, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -77,100 +77,95 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(333, 305);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // lbToolTip
+            // label1
             // 
-            this.lbToolTip.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lbToolTip, 5);
-            this.lbToolTip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbToolTip.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbToolTip.Location = new System.Drawing.Point(3, 0);
-            this.lbToolTip.Name = "lbToolTip";
-            this.lbToolTip.Size = new System.Drawing.Size(327, 61);
-            this.lbToolTip.TabIndex = 1;
-            this.lbToolTip.Text = "Bitte geben Sie das hinzuzufügendene Fach sowie die gewünschte Klasse ein und wäh" +
-    "len Sie anschließend noch die entsprechende Gruppenzuteilung aus:\r\n";
-            this.lbToolTip.Click += new System.EventHandler(this.label1_Click);
+            this.label1.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label1, 5);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(327, 61);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "gr";
             // 
             // txtSubject
             // 
             this.txtSubject.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tableLayoutPanel1.SetColumnSpan(this.txtSubject, 3);
-            this.txtSubject.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.txtSubject.Location = new System.Drawing.Point(135, 80);
+            this.txtSubject.Location = new System.Drawing.Point(135, 81);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(195, 22);
+            this.txtSubject.Size = new System.Drawing.Size(195, 20);
             this.txtSubject.TabIndex = 1;
             // 
             // cBClass
             // 
             this.cBClass.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tableLayoutPanel1.SetColumnSpan(this.cBClass, 3);
-            this.cBClass.Font = new System.Drawing.Font("Arial", 9.75F);
             this.cBClass.FormattingEnabled = true;
-            this.cBClass.Location = new System.Drawing.Point(135, 140);
+            this.cBClass.Location = new System.Drawing.Point(135, 142);
             this.cBClass.Name = "cBClass";
-            this.cBClass.Size = new System.Drawing.Size(195, 24);
+            this.cBClass.Size = new System.Drawing.Size(195, 21);
             this.cBClass.TabIndex = 4;
-            this.cBClass.SelectedIndexChanged += new System.EventHandler(this.cBClass_SelectedIndexChanged);
             // 
-            // btSave
+            // saveButton
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.btSave, 2);
-            this.btSave.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btSave.Location = new System.Drawing.Point(3, 247);
-            this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(126, 23);
-            this.btSave.TabIndex = 1;
-            this.btSave.Text = "&Speichern";
-            this.btSave.UseVisualStyleBackColor = true;
-            this.btSave.Click += new System.EventHandler(this.saveButton_Click);
+            this.tableLayoutPanel1.SetColumnSpan(this.saveButton, 2);
+            this.saveButton.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.saveButton.Location = new System.Drawing.Point(3, 247);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(126, 23);
+            this.saveButton.TabIndex = 1;
+            this.saveButton.Text = "Speichern";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // btCancel
+            // cancelButton
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.btCancel, 2);
-            this.btCancel.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btCancel.Location = new System.Drawing.Point(201, 247);
-            this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(129, 23);
-            this.btCancel.TabIndex = 5;
-            this.btCancel.Text = "&Abbrechen";
-            this.btCancel.UseVisualStyleBackColor = true;
-            this.btCancel.Click += new System.EventHandler(this.cancelButton_Click);
+            this.tableLayoutPanel1.SetColumnSpan(this.cancelButton, 2);
+            this.cancelButton.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.cancelButton.Location = new System.Drawing.Point(201, 247);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(129, 23);
+            this.cancelButton.TabIndex = 5;
+            this.cancelButton.Text = "Abbrechen";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // lbSubject
+            // label2
             // 
-            this.lbSubject.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbSubject.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lbSubject, 2);
-            this.lbSubject.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.lbSubject.Location = new System.Drawing.Point(88, 83);
-            this.lbSubject.Name = "lbSubject";
-            this.lbSubject.Size = new System.Drawing.Size(41, 16);
-            this.lbSubject.TabIndex = 2;
-            this.lbSubject.Text = "Fach:";
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label2, 2);
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label2.Location = new System.Drawing.Point(88, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Fach:";
             // 
-            // lbClass
+            // label3
             // 
-            this.lbClass.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbClass.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lbClass, 2);
-            this.lbClass.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.lbClass.Location = new System.Drawing.Point(77, 144);
-            this.lbClass.Name = "lbClass";
-            this.lbClass.Size = new System.Drawing.Size(52, 16);
-            this.lbClass.TabIndex = 3;
-            this.lbClass.Text = "Klasse:";
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label3, 2);
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label3.Location = new System.Drawing.Point(77, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Klasse:";
             // 
-            // lbGroup
+            // lblGroupe
             // 
-            this.lbGroup.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbGroup.AutoSize = true;
-            this.lbGroup.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGroup.Location = new System.Drawing.Point(75, 205);
-            this.lbGroup.Name = "lbGroup";
-            this.lbGroup.Size = new System.Drawing.Size(54, 16);
-            this.lbGroup.TabIndex = 6;
-            this.lbGroup.Text = "Gruppe:";
+            this.lblGroupe.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblGroupe.AutoSize = true;
+            this.lblGroupe.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGroupe.Location = new System.Drawing.Point(75, 205);
+            this.lblGroupe.Name = "lblGroupe";
+            this.lblGroupe.Size = new System.Drawing.Size(54, 16);
+            this.lblGroupe.TabIndex = 6;
+            this.lblGroupe.Text = "Gruppe:";
             // 
             // groupBox1
             // 
@@ -190,10 +185,9 @@
             // rBAll
             // 
             this.rBAll.AutoSize = true;
-            this.rBAll.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rBAll.Location = new System.Drawing.Point(129, 20);
             this.rBAll.Name = "rBAll";
-            this.rBAll.Size = new System.Drawing.Size(41, 20);
+            this.rBAll.Size = new System.Drawing.Size(36, 17);
             this.rBAll.TabIndex = 4;
             this.rBAll.TabStop = true;
             this.rBAll.Text = "All";
@@ -203,10 +197,9 @@
             // rB2
             // 
             this.rB2.AutoSize = true;
-            this.rB2.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rB2.Location = new System.Drawing.Point(81, 32);
             this.rB2.Name = "rB2";
-            this.rB2.Size = new System.Drawing.Size(33, 20);
+            this.rB2.Size = new System.Drawing.Size(31, 17);
             this.rB2.TabIndex = 3;
             this.rB2.TabStop = true;
             this.rB2.Text = "2";
@@ -216,10 +209,9 @@
             // rBV
             // 
             this.rBV.AutoSize = true;
-            this.rBV.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rBV.Location = new System.Drawing.Point(7, 32);
             this.rBV.Name = "rBV";
-            this.rBV.Size = new System.Drawing.Size(35, 20);
+            this.rBV.Size = new System.Drawing.Size(32, 17);
             this.rBV.TabIndex = 2;
             this.rBV.TabStop = true;
             this.rBV.Text = "V";
@@ -229,10 +221,9 @@
             // rB1
             // 
             this.rB1.AutoSize = true;
-            this.rB1.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rB1.Location = new System.Drawing.Point(81, 9);
             this.rB1.Name = "rB1";
-            this.rB1.Size = new System.Drawing.Size(33, 20);
+            this.rB1.Size = new System.Drawing.Size(31, 17);
             this.rB1.TabIndex = 1;
             this.rB1.TabStop = true;
             this.rB1.Text = "1";
@@ -242,10 +233,9 @@
             // rBN
             // 
             this.rBN.AutoSize = true;
-            this.rBN.Font = new System.Drawing.Font("Arial", 9.75F);
             this.rBN.Location = new System.Drawing.Point(7, 9);
             this.rBN.Name = "rBN";
-            this.rBN.Size = new System.Drawing.Size(35, 20);
+            this.rBN.Size = new System.Drawing.Size(33, 17);
             this.rBN.TabIndex = 0;
             this.rBN.TabStop = true;
             this.rBN.Text = "N";
@@ -272,14 +262,14 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lbToolTip;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSubject;
-        private System.Windows.Forms.Label lbSubject;
-        private System.Windows.Forms.Label lbClass;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cBClass;
-        private System.Windows.Forms.Button btSave;
-        private System.Windows.Forms.Button btCancel;
-        private System.Windows.Forms.Label lbGroup;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Label lblGroupe;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rBAll;
         private System.Windows.Forms.RadioButton rB2;

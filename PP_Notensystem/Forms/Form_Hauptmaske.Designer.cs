@@ -86,16 +86,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.DataList = new System.Windows.Forms.DataGridView();
             this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btNewClass = new System.Windows.Forms.Button();
-            this.btClassMod = new System.Windows.Forms.Button();
-            this.btNewSubject = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ClassList = new System.Windows.Forms.TreeView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btImport = new System.Windows.Forms.Button();
-            this.btOverview = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataList)).BeginInit();
             this.SuspendLayout();
@@ -125,51 +124,46 @@
             this.DataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.test});
             this.tableLayoutPanel1.SetColumnSpan(this.DataList, 2);
-            this.DataList.GridColor = System.Drawing.SystemColors.Control;
             this.DataList.Location = new System.Drawing.Point(3, 212);
             this.DataList.Name = "DataList";
             this.tableLayoutPanel1.SetRowSpan(this.DataList, 2);
             this.DataList.Size = new System.Drawing.Size(598, 224);
             this.DataList.TabIndex = 22;
             this.DataList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.DataList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataList_CellEndEdit);
             // 
             // test
             // 
             this.test.HeaderText = "Column1";
             this.test.Name = "test";
             // 
-            // btNewClass
+            // button1
             // 
-            this.btNewClass.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btNewClass.Location = new System.Drawing.Point(429, 2);
-            this.btNewClass.Name = "btNewClass";
-            this.btNewClass.Size = new System.Drawing.Size(107, 23);
-            this.btNewClass.TabIndex = 7;
-            this.btNewClass.Text = "Neue &Klasse";
-            this.btNewClass.UseVisualStyleBackColor = true;
-            this.btNewClass.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Location = new System.Drawing.Point(532, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Neue Klasse";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btClassMod
+            // button2
             // 
-            this.btClassMod.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btClassMod.Location = new System.Drawing.Point(539, 2);
-            this.btClassMod.Name = "btClassMod";
-            this.btClassMod.Size = new System.Drawing.Size(121, 23);
-            this.btClassMod.TabIndex = 8;
-            this.btClassMod.Text = "Klasse &bearb.";
-            this.btClassMod.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(613, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Klasse bearb.";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // btNewSubject
+            // button3
             // 
-            this.btNewSubject.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btNewSubject.Location = new System.Drawing.Point(663, 2);
-            this.btNewSubject.Name = "btNewSubject";
-            this.btNewSubject.Size = new System.Drawing.Size(109, 23);
-            this.btNewSubject.TabIndex = 9;
-            this.btNewSubject.Text = "Neues &Fach";
-            this.btNewSubject.UseVisualStyleBackColor = true;
-            this.btNewSubject.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Location = new System.Drawing.Point(710, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Neues Fach";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -177,13 +171,12 @@
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 22);
+            this.label1.Size = new System.Drawing.Size(109, 22);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Notensystem BS2";
+            this.label1.Text = "Notensystem";
             // 
             // ClassList
             // 
-            this.ClassList.Font = new System.Drawing.Font("Arial", 9.75F);
             this.ClassList.Location = new System.Drawing.Point(12, 29);
             this.ClassList.Name = "ClassList";
             treeNode1.Name = "Knoten6";
@@ -260,70 +253,53 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label3.Location = new System.Drawing.Point(657, 475);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 18;
             this.label3.Text = "DATE";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label4.Location = new System.Drawing.Point(829, 475);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 19;
             this.label4.Text = "USER";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F);
             this.label2.Location = new System.Drawing.Point(751, 475);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 20;
             this.label2.Text = "TIME";
             // 
-            // btImport
+            // button4
             // 
-            this.btImport.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btImport.Location = new System.Drawing.Point(775, 2);
-            this.btImport.Name = "btImport";
-            this.btImport.Size = new System.Drawing.Size(91, 23);
-            this.btImport.TabIndex = 21;
-            this.btImport.Text = "CSV-&Import";
-            this.btImport.UseVisualStyleBackColor = true;
-            this.btImport.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btOverview
-            // 
-            this.btOverview.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btOverview.Location = new System.Drawing.Point(340, 2);
-            this.btOverview.Name = "btOverview";
-            this.btOverview.Size = new System.Drawing.Size(83, 23);
-            this.btOverview.TabIndex = 22;
-            this.btOverview.Text = "&Gesamt";
-            this.btOverview.UseVisualStyleBackColor = true;
-            this.btOverview.Click += new System.EventHandler(this.button5_Click);
+            this.button4.Location = new System.Drawing.Point(791, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "CSV-Import";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // Form_Hauptmaske
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 494);
-            this.Controls.Add(this.btOverview);
-            this.Controls.Add(this.btImport);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ClassList);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btNewSubject);
-            this.Controls.Add(this.btClassMod);
-            this.Controls.Add(this.btNewClass);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Hauptmaske";
@@ -340,18 +316,17 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btNewClass;
-        private System.Windows.Forms.Button btClassMod;
-        private System.Windows.Forms.Button btNewSubject;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btImport;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView DataList;
         private System.Windows.Forms.DataGridViewTextBoxColumn test;
         public System.Windows.Forms.TreeView ClassList;
-        private System.Windows.Forms.Button btOverview;
 
 
     }
