@@ -78,6 +78,11 @@
     <Compile Include="SchoolClass.cs" />
     <Compile Include="SchoolGroup.cs" />
     <Compile Include="SchoolSubject.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="Teacher.cs" />
+    <EmbeddedResource Include="Forms\Form_DatensatzAuswählen.resx">
+      <DependentUpon>Form_DatensatzAuswählen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_FachHinzufügen.resx">
       <DependentUpon>Form_FachHinzufügen.cs</DependentUpon>
     </EmbeddedResource>

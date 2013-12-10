@@ -26,15 +26,11 @@ namespace PP_Notensystem.StudentImport
             //Alle schüler der Liste hinzufügen
             while (strStudents.EndOfStream == false)
             {
-                Person Pers = new Person();
-                string Student = strStudents.ReadLine();
-                string[] StudentSplit = Student.Split(new Char[] { ';' });
+                string StudentString = strStudents.ReadLine();
+                string[] StudentSplit = StudentString.Split(new Char[] { ';' });
+                Student Student = new Student(StudentSplit[2],StudentSplit[1],Convert.ToInt32(StudentSplit[0].Replace("-", "")));
 
-                Pers.PersID = Convert.ToInt32(StudentSplit[0].Replace("-", ""));
-                Pers.FirstName = StudentSplit[2];
-                Pers.LastName = StudentSplit[1];
-
-                this._ImportStudents.Add(Pers);
+                this._ImportStudents.Add(Student);
             }
 
             
@@ -43,8 +39,16 @@ namespace PP_Notensystem.StudentImport
       
     #endregion
 
-    #region Probertys
+    #region Members
 
+        /// <summary>
+        /// Liste mit den Schülern die Importiert bzw der Guppe zugehört werden müssen
+        /// </summary>
+        public List<Student> ImportStudents
+        {
+            get { return _ImportStudents; }
+            set { _ImportStudents = value; }
+        }
 
         /// <summary>
         /// Name der Klasse
@@ -73,14 +77,8 @@ namespace PP_Notensystem.StudentImport
         /// </summary>
         public int SchoolSubjectID { get; set; }
 
-        private List<Person> _ImportStudents = new List<Person>();
-        /// <summary>
-        /// Liste mit den Schülern die Importiert bzw der Guppe zugehört werden müssen
-        /// </summary>
-        public List<Person> ImportStudents { 
-            get{ return _ImportStudents;} 
-            set { _ImportStudents = value;}}
-
+        private List<Student> _ImportStudents = new List<Student>();
+        
     #endregion
 
     #region Methoden
@@ -108,6 +106,7 @@ namespace PP_Notensystem.StudentImport
             DataBase.insert(InsertGroup);
 
 
+
             //Form_SchullKlasseAuswählen auswählen = new Form_SchullKlasseAuswählen(this.SchoolClassName);
             //auswählen.ShowDialog();
 
@@ -130,6 +129,70 @@ namespace PP_Notensystem.StudentImport
             */
 
             
+        }
+
+        private void AddStudentsToDB()
+        {
+           //Group ID herausfinden
+            ////////////////////
+            DataTable tblGroup = new DataTable();
+            string selGroup = "SELECT id_Gruppe from Gruppe WHERE s_Description LIKE '" + this.SchoolGroupName + "'" +
+                                    " AND id_Unterrichstfach = " + this.SchoolSubjectID.ToString() +
+                                    " AND id_Klasse = " + this.SchoolClassID;
+            IDataReader Reader = DataBase.select(selGroup);
+            using (Reader)
+            {
+
+                tblGroup.Load(Reader);
+                this.SchoolGroupID = Convert.ToInt32(tblGroup.Rows[1][1]);
+
+            }
+
+            //Schüler Hinzufügen
+            /////////////////
+            foreach (Student AddStudent in _ImportStudents)
+            {
+                /*/////////////////////////////////////////////////////////////////////////
+                 * 
+                string selStudentExists = "SELECT id_Schüler From Person WHERE s_Vorname LIKE '" + AddStudent.FirstName + "" + 
+                                                    "' AND s_Nachname LIKE '" + AddStudent.LastName + "'";
+                DataTable TblStudent = new DataTable();
+                Reader = DataBase.select(selStudentExists);
+                TblStudent.Load(Reader);
+                
+                if (TblStudent.Rows.Count > 0)
+                {
+                    AddStudent.AddPerson();
+                    //Die Tabell mit dem so eben hinzugefügten Schüler wieder befüllen
+                    Reader = DataBase.select(selStudentExists);
+                    TblStudent.Load(Reader);
+                }
+                 * 
+                 * 
+                 * 
+                */
+                ///////////////////////////////////////////////////////////////////////////
+
+
+                AddStudent.PersID = AddStudent.GetPersonID(AddStudent.FirstName, AddStudent.LastName);
+                //Wenn der Student noch nicht in der DB existiert wird er hinzugefügt
+                if (AddStudent.PersID == 0)
+                {
+                    AddStudent.AddPerson();
+                }
+
+                AddStudent.AddStudentToGroup(this.SchoolGroupID);
+
+
+                // + this.SchoolGroupName + "', " + this.SchoolSubjectID.ToString() + ", " + this.SchoolClassID + ")";
+
+
+
+                /*SELECT
+
+FROM gruppeschueler gs
+	JOIN personen p ON gs.id_Schueler = p.id_Schueler*/
+            }
         }
 
     #endregion  

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -15,23 +16,25 @@ namespace PP_Notensystem
     /// <summary>
     /// Klasse die einen Datensatz der Tabelle Person dagibt
     /// </summary>
-    public class Person
+    public abstract class Person
     {
 
-        #region Konstruktoren
-
+     #region Konstruktoren
+        /*
         public Person()
         {
             
         }
-    
+    */
 
-        /// <param name="newFirstName">Vorname der Person</param>
+        /// <param name="newFirstName">Vorname der P_erson</param>
         /// <param name="newLastName">Nachname der Person</param>
         public Person(string newFirstName, string newLastName)
         {
             _LastName = newLastName;
             _FirstName = newFirstName;
+            _PersID = GetPersonID(newFirstName, newLastName);
+            
         }
 
 
@@ -47,7 +50,7 @@ namespace PP_Notensystem
 
         #endregion
 
-        #region Probertys
+     #region Members
 
         private string _FirstName;
         /// <summary>
@@ -71,12 +74,22 @@ namespace PP_Notensystem
 
         private int _PersID;
         /// <summary>
-        /// Id des Datensatzes der Person
+        /// Id des Datensatzes der Person (wenn null ist dann existiert die Person noch nicht in der DB)
         /// </summary>
         public int PersID
         {
             get { return _PersID; }
             set { _PersID = value; }
+        }
+
+        private bool _IsTeacher;
+        /// <summary>
+        /// Id des Datensatzes der Person
+        /// </summary>
+        protected bool IsTeacher
+        {
+            get { return _IsTeacher; }
+            set { _IsTeacher = value; }
         }
 
         /// <summary>
@@ -94,20 +107,41 @@ namespace PP_Notensystem
     #region Methoden
 
         /// <summary>
-        /// Fügt einen 
+        /// Fügt diese Person zur DB hinzu
         /// </summary>
-        /// <param name="funcFirstName"></param>
-        /// <param name="funcLastName"></param>
-        /// <param name="funcIsLeher">Wenn True gesetzt wird dann wird die Person als Lehrer hinzugefügt</param>
-        public void AddPerson(string funcFirstName, string funcLastName, bool funcIsLeher)
+        public virtual void AddPerson()
         {
 
-            string PersInsert = "INSERT INTO `notensystem`.`personen` (`id_Schüler`, `s_Vorname`, `n_Nachname`, `b_IsLehrer`) VALUES (NULL, '" + funcFirstName + "', '" + funcLastName + "', '" + funcIsLeher.ToString() + "');";
-
+            string PersInsert = "INSERT INTO `notensystem`.`personen` (`id_Schüler`, `s_Vorname`, `n_Nachname`, `b_IsLehrer`) " + 
+                " VALUES (NULL, '" + _FirstName + "', '" + _LastName + "', '" + _IsTeacher.ToString() + "');";
+            _PersID = GetPersonID(_FirstName, _LastName);
             DataBase.insert(PersInsert);
 
         }
 
+        /// <summary>
+        /// Gibt die ID der Person zurück, wenn sie nich in der DB existiert wird 0 zurückgegeben
+        /// </summary>
+        /// <returns>wenn sie nich in der DB existiert wird 0 zurückgegeben</returns>
+        public int GetPersonID(string funcFirstName, string funcLastName)
+        {
+            string select = "SELECT id_Schüler FROM person WHERE s_Vorname Like '" + funcFirstName + "' " +
+                                "AND n_Nachname LIKE '" + funcLastName + "' ";
+
+            DataTable TblStudent = new DataTable();
+            IDataReader Reader = DataBase.select(select);
+            TblStudent.Load(Reader);
+            if (TblStudent.Rows.Count > 0)
+                return Convert.ToInt32(TblStudent.Rows[0][0]);
+            else
+                return 0;
+        }
+
     #endregion
     }
+
+
+
 }
+
+
