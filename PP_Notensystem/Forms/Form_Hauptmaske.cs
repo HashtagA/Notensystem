@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PP_Notensystem.FormElements;
+using PP_Notensystem.StudentImport;
 
 namespace PP_Notensystem
 {
@@ -83,6 +84,12 @@ namespace PP_Notensystem
             string txt = (string)DataList.CurrentCell.FormattedValue;
             int id = (int)DataList.CurrentRow.Cells[0].Value;
             DataBase.update("UPDATE personen SET 0="+txt+" WHERE id_Schüler="+id);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmStudentImport form = new frmStudentImport();
+            form.ShowDialog();
         }
     }
 }
