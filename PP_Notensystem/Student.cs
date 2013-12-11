@@ -41,9 +41,9 @@ namespace PP_Notensystem
         //Fügt den Schüler hinzu
         private static void AddStudentToGroup(int funcGroupID, int funcStudentID)
         {
-            if (this.funcStudentID == 0)
+            if (funcStudentID == 0)
             {
-                throw new Exception("es existiert kein Schüler mit PK 0 und kann deswegen nicht zur gruppe hinzugefügt werden")
+                throw new Exception("es existiert kein Schüler mit PK 0 und kann deswegen nicht zur gruppe hinzugefügt werden");
             }
             string Insert = "INSERT INTO  gruppeschueler (id_Gruppe ,id_Schueler) VALUES (" + funcGroupID + ", " + funcStudentID + ")";
             DataBase.insert(Insert);

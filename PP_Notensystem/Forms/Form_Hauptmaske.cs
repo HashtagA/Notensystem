@@ -80,7 +80,9 @@ namespace PP_Notensystem
         }
 
         private void DataList_CellEndEdit(object sender, DataGridViewCellEventArgs e){
-            //string txt = DataList.CurrentCell.FormattedValue;
+            string txt = (string)DataList.CurrentCell.FormattedValue;
+            int id = (int)DataList.CurrentRow.Cells[0].Value;
+            DataBase.update("UPDATE personen SET 0="+txt+" WHERE id_Schüler="+id);
         }
     }
 }

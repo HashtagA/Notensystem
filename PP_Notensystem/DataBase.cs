@@ -67,6 +67,14 @@ namespace PP_Notensystem
                 return null;
             }
         }
+        public static void update(string query)
+        {
+            try{
+                DBHelper.ExecuteNonQuery(dbCon, query);
+            }catch(Exception e){
+                MessageBox.Show(e.Message);
+            }
+        }
         public static IDataReader getClasses(){
             return DataBase.select("SELECT * FROM klasse");
         }

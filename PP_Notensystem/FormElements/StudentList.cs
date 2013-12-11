@@ -9,34 +9,31 @@ namespace PP_Notensystem.FormElements
 {
     class StudentList
     {
+        private DataTable data = new DataTable();
 
         public StudentList(){
             
         }
 
         public void loadGroup(DataGridView list, object name){
-            DataTable data = new DataTable();
-            list.Columns.Clear();
-            IDataReader students = DataBase.select("SELECT p.s_Vorname AS Vorname, p.n_Nachname AS Nachname FROM personen p JOIN gruppeschueler gs ON(gs.id_Schueler=p.id_Schüler) JOIN gruppe g ON(gs.id_Gruppe=g.id_Gruppe) JOIN klasse k ON(k.id_Klasse=g.id_Klasse) WHERE k.id_Klasse=" + name);
-            using (students){
-                data.Load(students);
-                list.DataSource = data;
-            }
-
-
+            IDataReader students = DataBase.select("SELECT p.id_Schüler AS id, p.s_Vorname AS Vorname, p.n_Nachname AS Nachname FROM personen p JOIN gruppeschueler gs ON(gs.id_Schueler=p.id_Schüler) JOIN gruppe g ON(gs.id_Gruppe=g.id_Gruppe) JOIN klasse k ON(k.id_Klasse=g.id_Klasse) WHERE k.id_Klasse=" + name);
+            doQuery(list, students);
         }
         public void loadSubject(DataGridView list, string name)
         {
-            DataTable data = new DataTable();
+            IDataReader students = DataBase.select("SELECT p.id_Schüler AS id, p.s_Vorname AS Vorname, p.n_Nachname AS Nachname FROM personen p JOIN gruppeschueler gs ON(gs.id_Schueler=p.id_Schüler) WHERE gs.id_Gruppe=" + name);
+            doQuery(list, students);
+        }
+        public void doQuery(DataGridView list, IDataReader reader)
+        {
+            data = new DataTable();
             list.Columns.Clear();
-            IDataReader students = DataBase.select("SELECT p.s_Vorname AS Vorname, p.n_Nachname AS Nachname FROM personen p JOIN gruppeschueler gs ON(gs.id_Schueler=p.id_Schüler) WHERE gs.id_Gruppe=" + name);
-            using (students)
+            using (reader)
             {
-                data.Load(students);
+                data.Load(reader);
                 list.DataSource = data;
             }
-
-
+            list.Columns[0].Visible = false;
         }
     }
 }
