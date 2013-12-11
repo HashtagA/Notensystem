@@ -97,6 +97,7 @@
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(195, 20);
             this.txtSubject.TabIndex = 1;
+            this.txtSubject.TextChanged += new System.EventHandler(this.txtSubject_TextChanged);
             // 
             // cBClass
             // 
