@@ -15,13 +15,13 @@ namespace PP_Notensystem.FormElements
             
         }
 
-        public void loadGroup(DataGridView list, object name){
-            IDataReader students = DataBase.select("SELECT p.id_Schüler AS id, p.s_Vorname AS Vorname, p.n_Nachname AS Nachname FROM personen p JOIN gruppeschueler gs ON(gs.id_Schueler=p.id_Schüler) JOIN gruppe g ON(gs.id_Gruppe=g.id_Gruppe) JOIN klasse k ON(k.id_Klasse=g.id_Klasse) WHERE k.id_Klasse=" + name);
+        public void loadGroup(DataGridView list, object id){
+            IDataReader students = DataBase.select("SELECT p.id_Schüler AS id, p.Vorname, p.Nachname FROM personen p JOIN gruppeschueler gs ON(gs.id_Schueler=p.id_Schüler) JOIN gruppe g ON(gs.id_Gruppe=g.id_Gruppe) JOIN klasse k ON(k.id_Klasse=g.id_Klasse) WHERE k.id_Klasse=" + id);
             doQuery(list, students);
         }
-        public void loadSubject(DataGridView list, string name)
+        public void loadSubject(DataGridView list, string id)
         {
-            IDataReader students = DataBase.select("SELECT p.id_Schüler AS id, p.s_Vorname AS Vorname, p.n_Nachname AS Nachname FROM personen p JOIN gruppeschueler gs ON(gs.id_Schueler=p.id_Schüler) WHERE gs.id_Gruppe=" + name);
+            IDataReader students = DataBase.select("SELECT p.id_Schüler AS id, p.Vorname, p.Nachname FROM personen p JOIN gruppeschueler gs ON(gs.id_Schueler=p.id_Schüler) WHERE gs.id_Gruppe=" + id);
             doQuery(list, students);
         }
         public void doQuery(DataGridView list, IDataReader reader)

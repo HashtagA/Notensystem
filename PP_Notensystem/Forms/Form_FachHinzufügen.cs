@@ -63,8 +63,8 @@ namespace PP_Notensystem
 
         private void cBClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassList c1 = new ClassList();
-            cl.loadGroup(DataList, s_Description.SelectedNode.Tag);
+            /*ClassList c1 = new ClassList();
+            cl.loadGroup(DataList, s_Description.SelectedNode.Tag);*/
         }
 
         private void txtSubject_TextChanged(object sender, EventArgs e)
