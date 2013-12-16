@@ -18,6 +18,7 @@ namespace PP_Notensystem.Forms
         /// <param name="newDataArt"></param>
         public Form_DatensatzAuswählen(string newWhereSelect, DataArt newDataArt)
         {
+            this.DialogResult = DialogResult.None;
             this.WhereSelect = newWhereSelect;
             InitializeComponent();
             this.DataArtZumAuswählen = newDataArt;
@@ -27,19 +28,20 @@ namespace PP_Notensystem.Forms
         }
 
 
-    #region MEmber
+        #region MEmber
 
         public enum DataArt
         {
             SchoolClass,
-            SchoolSubject           
+            SchoolSubject
         }
 
 
         DataTable _TableData = new DataTable();
-        public DataTable TableData { 
-            get{return _TableData; } 
-            set{_TableData = value;}
+        public DataTable TableData
+        {
+            get { return _TableData; }
+            set { _TableData = value; }
         }
         public DataArt DataArtZumAuswählen { get; set; }
 
@@ -49,10 +51,10 @@ namespace PP_Notensystem.Forms
         //Die ID Spalte muss immr im INDEX 0 sein wird in der Oberfläche nicht angezeigt
         private string IDCollumName = "ID";
 
-    #endregion
+        #endregion
 
 
-    #region Methoden
+        #region Methoden
         private void Refresh(DataArt funArt)
         {
 
@@ -70,7 +72,7 @@ namespace PP_Notensystem.Forms
             this.GridData.MultiSelect = false;
             this.GridData.DataSource = _TableData;
             this.GridData.Columns[IDCollumName].Visible = false;
-           
+
         }
 
         /// <summary>
@@ -79,8 +81,8 @@ namespace PP_Notensystem.Forms
         private void RefreshSchoolClass()
         {
             //string selClass = "SELECT id_Klasse as " + IDCollumName + " , s_Description, dt_Beginn, dt_Ende, n_Turnus From klasse Where s_Description LIKE '" + this._ClassDescription + "'";
-            
-            string selClass = "SELECT id_Klasse as " + IDCollumName + " , s_Description, dt_Beginn, dt_Ende, n_Turnus From klasse " + this.WhereSelect ;
+
+            string selClass = "SELECT id_Klasse as " + IDCollumName + " , KlassenName, Beginn, Ende, Turnus From klasse " + this.WhereSelect;
             IDataReader Reader = DataBase.select(selClass);
             using (Reader)
             {
@@ -92,7 +94,7 @@ namespace PP_Notensystem.Forms
             _TableData.Columns[2].ColumnName = "Beginn";
             _TableData.Columns[3].ColumnName = "Ende";
             _TableData.Columns[4].ColumnName = "Turnus";
-           
+
 
         }
 
@@ -101,7 +103,7 @@ namespace PP_Notensystem.Forms
         /// </summary>
         private void RefreshScoolSubject()
         {
-            string selClass = "SELECT id_unterrichstfach as " + IDCollumName + " , s_Description From unterrichstfach " + this.WhereSelect;
+            string selClass = "SELECT id_unterrichstfach as " + IDCollumName + " , Beschreibung From unterrichstfach " + this.WhereSelect;
             IDataReader Reader = DataBase.select(selClass);
             using (Reader)
             {
@@ -110,11 +112,11 @@ namespace PP_Notensystem.Forms
 
             }
             _TableData.Columns[1].ColumnName = "Name";
-           
 
-         }
 
-    #endregion
+        }
+
+        #endregion
 
         private void btnSelectData_Click(object sender, EventArgs e)
         {
@@ -127,8 +129,9 @@ namespace PP_Notensystem.Forms
                 }
                 else
                 {
-                    DataGridViewRow row = GridData.SelectedRows[0];                    
+                    DataGridViewRow row = GridData.SelectedRows[0];
                     this.SelectedID = (int)row.Cells[0].Value;
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
             }
@@ -148,6 +151,10 @@ namespace PP_Notensystem.Forms
                 case DataArt.SchoolClass:
                     MessageBox.Show("Prottyp");
                     break;
+                default:
+                    MessageBox.Show("Prottyp");
+                    break;
+
             }
         }
     }

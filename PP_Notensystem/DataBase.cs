@@ -11,7 +11,7 @@ namespace PP_Notensystem
     public static class DataBase
     {
         public static IDbConnection dbCon;
-        public static DBHelper.DBTransaction dbTrans;
+        //public static DBHelper.DBTransaction dbTrans;
         public static string id { get; set; }
         private static int port { get; set; }
         private static string user { get; set; }
@@ -35,7 +35,7 @@ namespace PP_Notensystem
                 {
                     dbCon = DBHelper.GetMySQLDBConnection(id, port, user, pwd, db);
                     dbCon.Open();
-                    dbTrans = DBHelper.GetTransaction(dbCon, true);
+                    //dbTrans = DBHelper.GetTransaction(dbCon, true);
                 }
             }
             catch (Exception ex)
@@ -52,11 +52,9 @@ namespace PP_Notensystem
             dbCon.Close();
             dbCon.Open();
         }
-        public static void insert(string query)
+        public static object insert(string query)
         {
-            using (dbTrans){
-                DBHelper.ExecuteScalarGetInsertedID(dbCon, query);
-            }
+            return DBHelper.ExecuteScalarGetInsertedID(dbCon, query);
         }
         public static IDataReader select(string query)
         {
