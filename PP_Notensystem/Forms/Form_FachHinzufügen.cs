@@ -63,9 +63,10 @@ namespace PP_Notensystem
 
         private void cBClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*Cl cl = new cl();
-            comboBox.DataSource = new List<Person> {new Person{Name = "1"}, new Person{Name = "2"}};
-            comboBox.DataBindings.Add("Item", cl, "Person");*/
+            string query = "SELECT klasse.klassename FROM klasse";
+            IDataReader groups = DataBase.select(query);
+            
+
         }
 
         private void txtSubject_TextChanged(object sender, EventArgs e)
