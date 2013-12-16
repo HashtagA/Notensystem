@@ -112,9 +112,14 @@ namespace PP_Notensystem
         public virtual void AddPerson()
         {
 
-            string PersInsert = "INSERT INTO `notensystem`.`personen` (`id_Schüler`, `s_Vorname`, `n_Nachname`, `b_IsLehrer`) " + 
-                " VALUES (NULL, '" + _FirstName + "', '" + _LastName + "', '" + _IsTeacher.ToString() + "');";
-            _PersID = GetPersonID(_FirstName, _LastName);
+            //string PersInsert = "INSERT INTO `notensystem`.`personen` (`id_Schüler`, `Vorname`, `Nachname`, `IstLehrer`) " + 
+            //    " VALUES (" + _PersID +", '" + _FirstName + "', '" + _LastName + "', '" + _IsTeacher.ToString() + "');";
+
+            string PersInsert = "INSERT INTO `notensystem`.`personen` (`id_Schüler`, `Vorname`, `Nachname`, `IstLehrer`) " +
+                " VALUES (" + _PersID + ", '" + _FirstName + "', '" + _LastName + "', '" + _IsTeacher.ToString() + "')";
+            
+            
+            //_PersID = GetPersonID(_FirstName, _LastName);
             DataBase.insert(PersInsert);
 
         }
@@ -125,8 +130,8 @@ namespace PP_Notensystem
         /// <returns>wenn sie nich in der DB existiert wird 0 zurückgegeben</returns>
         public int GetPersonID(string funcFirstName, string funcLastName)
         {
-            string select = "SELECT id_Schüler FROM person WHERE s_Vorname Like '" + funcFirstName + "' " +
-                                "AND n_Nachname LIKE '" + funcLastName + "' ";
+            string select = "SELECT id_Schüler FROM personen WHERE Vorname Like '" + funcFirstName + "' " +
+                                "AND Nachname LIKE '" + funcLastName + "' ";
 
             DataTable TblStudent = new DataTable();
             IDataReader Reader = DataBase.select(select);
@@ -135,6 +140,28 @@ namespace PP_Notensystem
                 return Convert.ToInt32(TblStudent.Rows[0][0]);
             else
                 return 0;
+        }
+
+        /// <summary>
+        /// Prüft ob die Person mit der ID bereits existiert
+        /// </summary>
+        /// <param name="funcPersID"></param>
+        /// <returns></returns>
+        public static bool PersonExists(int funcPersID)
+        {
+            string select = "SELECT id_Schüler FROM personen WHERE id_Schüler = " + funcPersID.ToString();
+                //"SELECT id_Schüler FROM personen WHERE id_Schüler = " + funcPersID.ToString;
+
+            DataTable TblStudent = new DataTable();
+            IDataReader Reader = DataBase.select(select);
+
+            TblStudent.Load(Reader);
+            //if (funcPersID == Convert.ToInt32(TblStudent.Rows[0][0]))
+            if(TblStudent.Rows.Count > 0)
+            return true;
+            else
+                return false;
+            
         }
 
     #endregion

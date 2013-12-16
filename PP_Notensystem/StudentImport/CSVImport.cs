@@ -106,8 +106,8 @@ namespace PP_Notensystem.StudentImport
 
                     string InsertGroup = "Insert into gruppe (Beschreibung, id_Unterrichstfach , id_Klasse) values  ('"
                         + this.SchoolGroupName + "', " + this.SchoolSubjectID.ToString() + ", " + this.SchoolClassID + ")";
-
-                    DataBase.insert(InsertGroup);
+                   
+                   this.SchoolGroupID = Convert.ToInt32(DataBase.insert(InsertGroup));
 
                     //Schüler werden zur Gruppe hinzugefügt, falls nicht vorhanden werden sie in die DB geschrieben
                     AddStudentsToDBToGroup();
@@ -145,10 +145,12 @@ namespace PP_Notensystem.StudentImport
             foreach (Student AddStudent in _ImportStudents)
             {
                
-
-                AddStudent.PersID = AddStudent.GetPersonID(AddStudent.FirstName, AddStudent.LastName);
+                //der Student braucht keine ID suchen
+                //AddStudent.PersID = AddStudent.GetPersonID(AddStudent.FirstName, AddStudent.LastName);
+                //int existingStudentID = AddStudent.GetPersonID(AddStudent.FirstName, AddStudent.LastName);
                 //Wenn der Student noch nicht in der DB existiert wird er hinzugefügt
-                if (AddStudent.PersID == 0)
+                //if (existingStudentID == 0)
+                if (Person.PersonExists(AddStudent.PersID) == false)
                 {
                     AddStudent.AddPerson();
                 }

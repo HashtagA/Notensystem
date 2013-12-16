@@ -46,6 +46,7 @@ namespace PP_Notensystem
                 throw new Exception("es existiert kein Schüler mit PK 0 und kann deswegen nicht zur gruppe hinzugefügt werden");
             }
             string Insert = "INSERT INTO  gruppeschueler (id_Gruppe ,id_Schueler) VALUES (" + funcGroupID + ", " + funcStudentID + ")";
+            //string Insert = "INSERT INTO  gruppeschueler  VALUES (" + funcGroupID + ", " + funcStudentID + ")";
             DataBase.insert(Insert);
         }
 
@@ -62,6 +63,8 @@ namespace PP_Notensystem
             AddStudentToGroup(funcGroupID, this.PersID);
             
         }
+
+   
     #endregion
     }
 }
