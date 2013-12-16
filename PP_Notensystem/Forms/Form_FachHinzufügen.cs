@@ -63,11 +63,17 @@ namespace PP_Notensystem
 
         private void cBClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*ClassList c1 = new ClassList();
-            cl.loadGroup(DataList, s_Description.SelectedNode.Tag);*/
+            /*Cl cl = new cl();
+            comboBox.DataSource = new List<Person> {new Person{Name = "1"}, new Person{Name = "2"}};
+            comboBox.DataBindings.Add("Item", cl, "Person");*/
         }
 
         private void txtSubject_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
