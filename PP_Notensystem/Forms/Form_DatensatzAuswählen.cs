@@ -22,9 +22,8 @@ namespace PP_Notensystem.Forms
             this.WhereSelect = newWhereSelect;
             InitializeComponent();
             this.DataArtZumAuswählen = newDataArt;
-            Refresh(this.DataArtZumAuswählen);
-
-            this.GridData.Rows[0].Selected = true;
+            
+            //this.GridData.Rows[0].Selected = true;
         }
 
 
@@ -146,16 +145,20 @@ namespace PP_Notensystem.Forms
             switch (this.DataArtZumAuswählen)
             {
                 case DataArt.SchoolSubject:
-                    MessageBox.Show("Prottyp");
+                    addSubject aS = new addSubject();
+                    aS.ShowDialog();
                     break;
                 case DataArt.SchoolClass:
                     MessageBox.Show("Prottyp");
+                    //addClassForm acf = new addClassForm();
+                    //acf.ShowDialog();
                     break;
                 default:
                     MessageBox.Show("Prottyp");
                     break;
 
             }
+            Refresh(this.DataArtZumAuswählen);
         }
 
 

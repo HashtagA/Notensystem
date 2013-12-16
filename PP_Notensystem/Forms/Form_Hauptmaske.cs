@@ -80,10 +80,42 @@ namespace PP_Notensystem
 
         }
 
-        private void DataList_CellEndEdit(object sender, DataGridViewCellEventArgs e){
+        //editieren einer Zeile - Datagrid
+        private void DataList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
             string txt = (string)DataList.CurrentCell.FormattedValue;
             int id = (int)DataList.CurrentRow.Cells[0].Value;
-            DataBase.update("UPDATE personen SET 0="+txt+" WHERE id_Schüler="+id);
+            string query = "UPDATE personen SET id_Schüler=" + DataList.CurrentRow.Cells[0].Value + ", Vorname='" + DataList.CurrentRow.Cells[1].Value + "', Nachname='" + DataList.CurrentRow.Cells[2].Value + "' WHERE id_Schüler=" + id;
+            DataBase.update(query);
+        }
+        
+        //hinzufügen einer Zeile - Datagrid
+        private void DataList_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DataGridViewRow row = DataList.Rows[DataList.Rows.Count - 1];
+           
+            string vn = row.Cells[0].EditedFormattedValue.ToString();
+            string nn ="";
+            if(row.Cells.Count>1){
+                nn = row.Cells[1].EditedFormattedValue.ToString();
+            }
+            if (vn != "" && nn != "")
+            {
+                Student newStudent = new Student((string)row.Cells[1].EditedFormattedValue, "nachname");
+                newStudent.AddStudentToDB();
+                newStudent.AddStudentToGroup(Convert.ToInt32(ClassList.SelectedNode.Tag));
+            }
+
+        }
+
+        private void btnGesamt_Click(object sender, EventArgs e)
+        {
+            if(ClassList.SelectedNode.Level==1){
+                Form_GegenstandGesamtAnsicht newClass = new Form_GegenstandGesamtAnsicht((string)ClassList.SelectedNode.Tag); 
+            }else{
+                MessageBox.Show("Keine Gruppe ausgewählt");
+            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)

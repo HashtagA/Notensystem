@@ -181,7 +181,6 @@
             this.Name = "frmStudentImport";
             this.ShowIcon = false;
             this.Text = "frmStudentImport";
-            this.Load += new System.EventHandler(this.frmStudentImport_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

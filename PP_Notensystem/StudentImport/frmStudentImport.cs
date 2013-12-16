@@ -24,7 +24,6 @@ namespace PP_Notensystem.StudentImport
         public frmStudentImport()
         {
             InitializeComponent();
-            txtPath.Text = "C:\\temp\\5aTIX_GDT_N.csv";
         }
 
 
@@ -99,6 +98,7 @@ namespace PP_Notensystem.StudentImport
                 Import.SchoolSubjectName = txtSubject.Text;
 
                 Import.ValidateClassSubject();
+                this.Close();
             }
             catch (IOException ex)
             {
@@ -106,10 +106,7 @@ namespace PP_Notensystem.StudentImport
             }
         }
 
-        private void frmStudentImport_Load(object sender, EventArgs e)
-        {
-
-        }
+     
 
 
 

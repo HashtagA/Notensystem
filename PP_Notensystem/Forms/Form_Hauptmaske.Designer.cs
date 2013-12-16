@@ -86,6 +86,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.DataList = new System.Windows.Forms.DataGridView();
             this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -95,6 +96,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnGesamt = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataList)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +124,8 @@
             // 
             this.DataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.test});
+            this.test,
+            this.Column1});
             this.tableLayoutPanel1.SetColumnSpan(this.DataList, 2);
             this.DataList.Location = new System.Drawing.Point(3, 212);
             this.DataList.Name = "DataList";
@@ -130,11 +133,17 @@
             this.DataList.Size = new System.Drawing.Size(598, 224);
             this.DataList.TabIndex = 22;
             this.DataList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataList_CellEndEdit);
+            this.DataList.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataList_RowsAdded);
             // 
             // test
             // 
             this.test.HeaderText = "Column1";
             this.test.Name = "test";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
             // 
             // button1
             // 
@@ -287,11 +296,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // btnGesamt
+            // 
+            this.btnGesamt.Location = new System.Drawing.Point(435, 1);
+            this.btnGesamt.Name = "btnGesamt";
+            this.btnGesamt.Size = new System.Drawing.Size(91, 23);
+            this.btnGesamt.TabIndex = 22;
+            this.btnGesamt.Text = "Gesamtansicht";
+            this.btnGesamt.UseVisualStyleBackColor = true;
+            this.btnGesamt.Click += new System.EventHandler(this.btnGesamt_Click);
+            // 
             // Form_Hauptmaske
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 494);
+            this.Controls.Add(this.btnGesamt);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -326,8 +346,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView DataList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn test;
         public System.Windows.Forms.TreeView ClassList;
+        private System.Windows.Forms.Button btnGesamt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 
 
     }
