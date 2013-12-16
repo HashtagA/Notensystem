@@ -12,6 +12,12 @@ namespace PP_Notensystem
         private String name;
         private String groupe;
         private String schoolclass; /* TODO: Mit eigen Erstellter Klasse initalisieren */
+
+        public string Name
+        {
+            get { return name; }
+        }
+
         #endregion
 
         public SchoolSubject(String name, String groupe, String schoolclass) /* TODO: Mit eigen Erstellter Klasse initalisieren */
@@ -19,6 +25,11 @@ namespace PP_Notensystem
             this.name = name;
             this.groupe = groupe;
             this.schoolclass = schoolclass;
+        }
+
+        public SchoolSubject(String name) /* TODO: Mit eigen Erstellter Klasse initalisieren */
+        {
+            this.name = name;
         }
     }
 }

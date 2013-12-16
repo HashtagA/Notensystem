@@ -21,6 +21,7 @@ namespace PP_Notensystem
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            createSchoolSubject();
             DialogResult = DialogResult.OK;
         }
 
@@ -28,14 +29,14 @@ namespace PP_Notensystem
         {
             DialogResult = DialogResult.Cancel;
         }
-
+        
         public SchoolSubject createSchoolSubject()
         {
-            SchoolSubject tmpSchoolSubject = new SchoolSubject(txtSubject.Text, tmpGroupe, cBClass.Text);
-
+            SchoolSubject tmpSchoolSubject = new SchoolSubject(txtSubject.Text);
+            DataBase.insert("INSERT INTO `unterrichstfach` ( `Beschreibung`) VALUES ('" + tmpSchoolSubject.Name +"')");
             return tmpSchoolSubject;
         }
-
+        /*
         private void rBN_CheckedChanged(object sender, EventArgs e)
         {
             tmpGroupe = rBN.Text;
@@ -60,7 +61,7 @@ namespace PP_Notensystem
         {
             tmpGroupe = rBAll.Text;
         }
-
+        */
         private void cBClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             string query = "SELECT klasse.klassename FROM klasse";
